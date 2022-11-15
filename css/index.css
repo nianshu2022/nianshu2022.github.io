@@ -943,12 +943,12 @@ pre .deletion {
   white-space: nowrap;
   height: 100%;
   width: 100%;
-  padding: 0 13px;
+  padding: 0 10px;
   line-height: 80px;
   color: var(--theme-color, #00283a);
   text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 2px;
+  font-size: 14px;
+  letter-spacing: 1px;
   font-weight: 700;
   transition: all 0.4s ease-in-out;
 }
