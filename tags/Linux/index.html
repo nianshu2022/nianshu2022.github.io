@@ -58,7 +58,7 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"nianshu2022.github.io","author":"念舒","root":"/","typed_text":["O&M Engineer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.0（试运行）","theme":{"switch":true,"default":"style-light"},"search":{"enable":false,"type":"engine","href":"https://www.google.com/search?q=site:","domain":null},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":true,"url":"https://nianshu2022.github.io"},"swup":false};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"nianshu2022.github.io","author":"念舒","root":"/","typed_text":["O&M Engineer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.0（试运行）","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:nianshu2022.github.io","domain":"https://nianshu2022.github.io/","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":true,"url":"https://nianshu2022.github.io"},"swup":false};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=1.0（试运行）" id="trm-switch-style">
@@ -159,19 +159,21 @@
 								📋归档
 							</a>
 							
-						</li>
-						
-						<li class="menu-item-has-children ">
-							<a  href="/categories/" target="">
-								🔰分类
-							</a>
-							
-						</li>
-						
-						<li class="menu-item-has-children ">
-							<a  href="/tags/" target="">
-								🔖标签
-							</a>
+							<ul>
+								
+								<li>
+									<a  href="/categories/" target="">
+										🔰分类
+									</a>
+								</li>
+								
+								<li>
+									<a  href="/tags/" target="">
+										🔖标签
+									</a>
+								</li>
+								
+							</ul>
 							
 						</li>
 						
@@ -197,8 +199,8 @@
 						</li>
 						
 						<li class="menu-item-has-children ">
-							<a  href="/null" target="">
-								📮留言板
+							<a  href="/" target="">
+								🔍搜索
 							</a>
 							
 						</li>
@@ -223,6 +225,12 @@
 			
 			<!-- mode switcher place end -->
 
+			
+				
+				<div id="trm-search-btn" class="trm-search-btn">
+					<i class="fas fa-search"></i>
+				</div>
+				 
 			 
 
 		</div>
@@ -350,16 +358,16 @@
                 国家🌏:
             </div>
             <div class="trm-label trm-label-light">
-                中华人民共和国
+                中国
             </div>
         </li>
     
         <li>
             <div class="trm-label">
-                定位📍:
+                坐标📍:
             </div>
             <div class="trm-label trm-label-light">
-                甘肃 · 兰州
+                兰州
             </div>
         </li>
     
@@ -409,7 +417,7 @@
         <div class="trm-card">
             <div style="padding: 0 20px;">
                 
-                    <ul class="row trm-tag-list trm-list" itemprop="keywords"><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li></ul>
+                    <ul class="row trm-tag-list trm-list" itemprop="keywords"><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">1</span></li></ul>
                 
             </div>
         </div>
@@ -550,6 +558,20 @@
     <i class="fas fa-arrow-up"></i>
 </div>
   
+<div class="trm-search-popup">
+    <div class="trm-search-header">
+        <span class="trm-search-popup-btn-close">
+            <i class="fas fa-times"></i>
+        </span>
+    </div>
+    <div class="form trm-search-form">
+        <input class="trm-search-input" type="text" placeholder="搜索...">
+    </div>
+    <div class="trm-search-result-container">
+
+    </div>
+</div>
+
   <!-- Plugin -->
 
 
@@ -570,6 +592,11 @@
         <script src="/js/plugins/typing.js?v=1.0（试运行）"></script>
     
 
+    
+        
+<script src="//cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=1.0（试运行）"></script>
     
 
     <!-- 数学公式 -->
