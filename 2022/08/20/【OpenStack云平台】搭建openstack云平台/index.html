@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="【OpenStack云平台】搭建openstack云平台1. 系统镜像安装运行环境系统要求为CentOS7.5，内核版本不低于3.10。CentOS-7.5-x86_64-DVD-1804.isoChinaskill_Cloud_iaas.iso 2. 网络架构及硬件配置   主机名 内存 硬盘1 硬盘2 IP地址(VMnet1) IP地址(VMnet8)    controller 4G 100">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【OpenStack云平台】搭建openstack云平台">
+<meta property="og:url" content="https://nianshu2022.github.io/2022/08/20/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91%E6%90%AD%E5%BB%BAopenstack%E4%BA%91%E5%B9%B3%E5%8F%B0/index.html">
+<meta property="og:site_name" content="念舒_C.ying">
+<meta property="og:description" content="【OpenStack云平台】搭建openstack云平台1. 系统镜像安装运行环境系统要求为CentOS7.5，内核版本不低于3.10。CentOS-7.5-x86_64-DVD-1804.isoChinaskill_Cloud_iaas.iso 2. 网络架构及硬件配置   主机名 内存 硬盘1 硬盘2 IP地址(VMnet1) IP地址(VMnet8)    controller 4G 100">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/989138c544b243fbb69dd79b23ce40be.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/eab5a78fd5a14c498ed7a0a07cef8a62.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e18d1bbd52464b258c94fd8a8612ec32.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/14b099d8efae4e5d99b9b916aa2248c0.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/44e3c2e0a8c94949b47e257bd4c4a58f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ba0ed1900cfe45f6a3fd1770c618c3ad.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/47d012e4734d4884a31fa0d590252be4.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f60d8ef478e84456b7e71e267fd0a49e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f8c9ec47084049509569ed7addf5a967.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3348a313242c41dab685c8efe9b92303.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/79d9774bfd094aa1a0ee2eee4c358823.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e450303ade1f4d6eb4f891f4b111580c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f0162da1fcb34378ab44643f38734b7d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/856c695ec52b442fb544229e6ae21851.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/107733ea6750470e9f064fc3c1b7d7f0.png">
+<meta property="article:published_time" content="2022-08-20T11:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-16T06:18:32.838Z">
+<meta property="article:author" content="念舒">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Centos">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="云原生">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/989138c544b243fbb69dd79b23ce40be.png">
+
+
+<title >【OpenStack云平台】搭建openstack云平台</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=1.0（试运行）' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=1.0（试运行）' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+
+
+    
+
+    
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"nianshu2022.github.io","author":"念舒","root":"/","typed_text":["O&M Engineer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.0（试运行）","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:nianshu2022.github.io 念舒_C.ying","domain":"nianshu2022.github.io","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":true,"url":"https://nianshu2022.github.io"},"swup":false};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=1.0（试运行）" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+
+
+<!-- Site Analytics -->
+
+    
+        <!-- Baidu Analytics -->
+        <script defer>
+            var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?3349ac31b537bd3389e14e79b583dc6a";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+     
+
+    
+
+    
+ 
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" data-scroll-container style="opacity: 0">
+          <div data-scroll-section id="content" class="trm-scroll-section">
+
+            <div class="locomotive-scroll__sticky-target" style=" position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
+
+            <!-- top bar -->
+            <header class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+			<a href="/" class="trm-logo-frame trm-anima-link">
+				
+					<img src="/img/favicon.svg" alt="logo">
+				
+				
+					<div class="trm-logo-text">
+						念舒_<span>C.ying</span>
+					</div>
+				
+			</a>
+			<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+
+			<!-- menu -->
+			<div class="trm-menu">
+				<nav>
+					<ul>
+						
+						<li class="menu-item-has-children ">
+							<a  href="/" target="">
+								🏠主页
+							</a>
+							
+						</li>
+						
+						<li class="menu-item-has-children ">
+							<a  href="/archives/" target="">
+								📋归档
+							</a>
+							
+							<ul>
+								
+								<li>
+									<a  href="/categories/" target="">
+										🔰分类
+									</a>
+								</li>
+								
+								<li>
+									<a  href="/tags/" target="">
+										🔖标签
+									</a>
+								</li>
+								
+							</ul>
+							
+						</li>
+						
+						<li class="menu-item-has-children ">
+							<a  href="/child/" target="">
+								🏘仓库
+							</a>
+							
+						</li>
+						
+						<li class="menu-item-has-children ">
+							<a  href="/links/" target="">
+								👥友邻
+							</a>
+							
+						</li>
+						
+						<li class="menu-item-has-children ">
+							<a  href="/about/" target="">
+								👨‍💻壹个人
+							</a>
+							
+						</li>
+						
+						<li class="menu-item-has-children ">
+							<a  href="/" target="">
+								🔍搜索
+							</a>
+							
+						</li>
+						
+					</ul>
+				</nav>
+			</div>
+			<!-- menu end -->
+			
+			<!-- mode switcher place -->
+			
+			<div class="trm-mode-switcher-place">
+				<!-- <div class="trm-hidden-switcher"> -->
+					<div class="trm-mode-switcher">
+					  <i class="far fa-sun"></i>
+					  <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+					  <label class="trm-swich" for="trm-swich"></label>
+					  <i class="far fa-moon"></i>
+					</div>
+				  <!-- </div> -->
+			</div>
+			
+			<!-- mode switcher place end -->
+
+			
+				
+				<div id="trm-search-btn" class="trm-search-btn">
+					<i class="fas fa-search"></i>
+				</div>
+				 
+			 
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner" data-scroll data-scroll-direction="vertical">
+    
+    <!-- banner video cover -->
+    <video autoplay="autoplay" loop muted playsinline webkit-playinginline class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
+        <source src="//cdn.moji.com/websrc/video/autumn20190924.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        Your browser does not support HTML5 video.
+    </video>
+    <!-- banner video cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container" data-scroll data-scroll-direction="vertical" data-scroll-speed="0">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            【OpenStack云平台】搭建openstack云平台
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2022
+                                    </span
+                                ></li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <a href="#about-triger" data-scroll-to="#about-triger" data-scroll-offset="-130" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </a>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    
+
+<div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
+    
+        <div class="trm-tabs" id="sidebar-tabs">
+           <div class="trm-tabs-nav trm-mb-40" id="trm-tabs-nav">
+                <div data-to="tabs-user" class="trm-tabs-nav-item"><i class="fas fa-user-alt"></i></div>
+                <div data-to="tabs-toc" class="trm-tabs-nav-item active"><i class="fas fa-th-list"></i></div>
+           </div>
+            <div name="tabs-user" class="trm-tabs-item">
+                <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20"><img class="trm-avatar" src="/img/avatar.jpg" alt="Avatar"> </div>
+    <h5 class="trm-name trm-mb-15">
+        念舒_C.ying
+    </h5>
+    
+    <div class="trm-label">
+        I`m
+        <span class="trm-typed-text">
+            <!-- Words for theme.user.typedText -->
+        </span>
+    </div>
+    
+</div>
+<!-- card header end -->
+
+<!-- sidebar social -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+
+<div class="trm-social">
+    
+        <a href="https://github.com/nianshu2022" title="Github" rel="nofollow" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+    
+        <a href="https://gitee.com/nianshu2022" title="Gitee" rel="nofollow" target="_blank">
+            <i class="fab fa-github-alt"></i>
+        </a>
+    
+        <a href="https://weibo.com/u/7418091828" title="weibo" rel="nofollow" target="_blank">
+            <i class="fab fa-weibo"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+
+<!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                国家🌏:
+            </div>
+            <div class="trm-label trm-label-light">
+                中国
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                坐标📍:
+            </div>
+            <div class="trm-label trm-label-light">
+                兰州
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                落地日🚼:
+            </div>
+            <div class="trm-label trm-label-light">
+                2001.02
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                星座♒️:
+            </div>
+            <div class="trm-label trm-label-light">
+                水瓶座
+            </div>
+        </li>
+    
+</ul>
+
+<!-- info end -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<!-- action button -->
+<div class="text-center">
+    <a href="mailto:2478951652@qq.com" class="trm-btn">
+        联系我
+        <i class="far fa-envelope"></i>
+    </a>
+</div>
+<!-- action button end -->
+
+            </div>
+            <div name="tabs-toc" class="trm-tabs-item active">
+                <div class="post-toc">
+    <ol class="toc"><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#【OpenStack云平台】搭建openstack云平台"  data-scroll-to="#【OpenStack云平台】搭建openstack云平台"><span class="toc-number">1.</span> <span class="toc-text">【OpenStack云平台】搭建openstack云平台</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#1-系统镜像"  data-scroll-to="#1-系统镜像"><span class="toc-number">1.1.</span> <span class="toc-text">1. 系统镜像</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#2-网络架构及硬件配置"  data-scroll-to="#2-网络架构及硬件配置"><span class="toc-number">1.2.</span> <span class="toc-text">2. 网络架构及硬件配置</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#3-基础环境部署"  data-scroll-to="#3-基础环境部署"><span class="toc-number">1.3.</span> <span class="toc-text">3. 基础环境部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#3-1-配置映射、主机名、网络、关闭防火墙"  data-scroll-to="#3-1-配置映射、主机名、网络、关闭防火墙"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 配置映射、主机名、网络、关闭防火墙</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#3-2-挂载镜像、配置yum源"  data-scroll-to="#3-2-挂载镜像、配置yum源"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 挂载镜像、配置yum源</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#3-3-计算节点分区"  data-scroll-to="#3-3-计算节点分区"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 计算节点分区</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#3-4-编辑环境变量"  data-scroll-to="#3-4-编辑环境变量"><span class="toc-number">1.3.4.</span> <span class="toc-text">3.4 编辑环境变量</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#3-5-通过脚本安装服务"  data-scroll-to="#3-5-通过脚本安装服务"><span class="toc-number">1.3.5.</span> <span class="toc-text">3.5 通过脚本安装服务</span></a></li></ol></li></ol></li></ol>
+</div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="col-lg-8">
+                <div class="trm-content" id="trm-content">
+                    <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
+
+                    <div class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="far fa-calendar-alt trm-icon"></i><br>
+            08/20
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="far fa-clock trm-icon"></i><br>
+            19:00
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="far fa-user trm-icon"></i><br>
+            念舒_C.ying
+        </div>
+    </div> 
+</div>
+<div class="trm-card ">
+    <article class="trm-publication">
+    <h1 id="【OpenStack云平台】搭建openstack云平台"><a href="#【OpenStack云平台】搭建openstack云平台" class="headerlink" title="【OpenStack云平台】搭建openstack云平台"></a>【OpenStack云平台】搭建openstack云平台</h1><h2 id="1-系统镜像"><a href="#1-系统镜像" class="headerlink" title="1. 系统镜像"></a>1. 系统镜像</h2><p>安装运行环境系统要求为CentOS7.5，内核版本不低于3.10。<br>CentOS-7.5-x86_64-DVD-1804.iso<br>Chinaskill_Cloud_iaas.iso</p>
+<h2 id="2-网络架构及硬件配置"><a href="#2-网络架构及硬件配置" class="headerlink" title="2. 网络架构及硬件配置"></a>2. 网络架构及硬件配置</h2><table>
+<thead>
+<tr>
+<th>主机名</th>
+<th>内存</th>
+<th>硬盘1</th>
+<th>硬盘2</th>
+<th>IP地址(VMnet1)</th>
+<th>IP地址(VMnet8)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>controller</td>
+<td>4G</td>
+<td>100G</td>
+<td>无</td>
+<td>192.168.100.10</td>
+<td>192.168.200.10</td>
+</tr>
+<tr>
+<td>compute</td>
+<td>4G</td>
+<td>100G</td>
+<td>200G</td>
+<td>192.168.100.20</td>
+<td>192.168.200.20</td>
+</tr>
+</tbody></table>
+<h2 id="3-基础环境部署"><a href="#3-基础环境部署" class="headerlink" title="3. 基础环境部署"></a>3. 基础环境部署</h2><h3 id="3-1-配置映射、主机名、网络、关闭防火墙"><a href="#3-1-配置映射、主机名、网络、关闭防火墙" class="headerlink" title="3.1 配置映射、主机名、网络、关闭防火墙"></a>3.1 配置映射、主机名、网络、关闭防火墙</h3><p><strong>computer节点和compute节点：</strong><br>修改/etc/hosts文件添加映射<br>192.168.100.10 controller<br>192.168.100.20 compute<br><img src="https://img-blog.csdnimg.cn/989138c544b243fbb69dd79b23ce40be.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h4 id="3-1-1-controller节点"><a href="#3-1-1-controller节点" class="headerlink" title="3.1.1 controller节点"></a>3.1.1 controller节点</h4><p><strong>修改主机名：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl <span class="built_in">set</span>-hostname controller</span><br></pre></td></tr></table></figure>
+
+<p><strong>配置网络：</strong><br>修改BOOTPROTO=dhcp  （dhcp改为static）    ONBOOT=no   （no改为yes）<br><strong>ens33添加：</strong><br>IPADDR=192.168.100.10<br>PREFIX=24<br>GATEWAY=192.168.100.1<br><strong>ens34添加：</strong><br>IPADDR=192.168.200.10<br>PREFIX=24<br><img src="https://img-blog.csdnimg.cn/eab5a78fd5a14c498ed7a0a07cef8a62.png" alt="在这里插入图片描述" loading="lazy"><br><img src="https://img-blog.csdnimg.cn/e18d1bbd52464b258c94fd8a8612ec32.png" alt="在这里插入图片描述" loading="lazy"></p>
+<p><strong>关闭防火墙及修改配置文件：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]<span class="meta"># systemctl stop firewalld	关闭防火墙</span></span><br><span class="line">[root@controller ~]<span class="meta"># systemctl disable firewalld</span></span><br><span class="line">[root@controller ~]<span class="meta"># vi /etc/selinux/config      </span></span><br><span class="line">SELINUX=enforcing  （enforcing 改为disabled）</span><br><span class="line">[root@controller ~]<span class="meta"># setenforce 0	#立即生效</span></span><br><span class="line">[root@controller ~]<span class="meta"># getenforce</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/14b099d8efae4e5d99b9b916aa2248c0.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h4 id="3-1-2-compute-节点"><a href="#3-1-2-compute-节点" class="headerlink" title="3.1.2 compute 节点"></a>3.1.2 compute 节点</h4><p><strong>修改主机名：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl <span class="built_in">set</span>-hostname compute</span><br></pre></td></tr></table></figure>
+<p><strong>配置网络：</strong><br>修改BOOTPROTO=dhcp  （dhcp改为static）    ONBOOT=no   （no改为yes）<br><strong>ens33添加：</strong><br>IPADDR=192.168.100.20<br>PREFIX=24<br>GATEWAY=192.168.100.1<br><strong>ens34添加：</strong><br>IPADDR=192.168.200.20<br>PREFIX=24<br><img src="https://img-blog.csdnimg.cn/44e3c2e0a8c94949b47e257bd4c4a58f.png" alt="在这里插入图片描述" loading="lazy"><br><img src="https://img-blog.csdnimg.cn/ba0ed1900cfe45f6a3fd1770c618c3ad.png" alt="在这里插入图片描述" loading="lazy"></p>
+<p><strong>关闭防火墙及修改配置文件：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@compute ~]<span class="meta"># systemctl stop firewalld	 #关闭防火墙</span></span><br><span class="line">[root@compute ~]<span class="meta"># systemctl disable firewalld</span></span><br><span class="line">[root@compute ~]<span class="meta"># vi /etc/selinux/config      </span></span><br><span class="line">SELINUX=enforcing  （enforcing 改为disabled）</span><br><span class="line">[root@compute ~]<span class="meta"># setenforce 0	 #立即生效</span></span><br><span class="line">[root@compute ~]<span class="meta"># getenforce</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-挂载镜像、配置yum源"><a href="#3-2-挂载镜像、配置yum源" class="headerlink" title="3.2 挂载镜像、配置yum源"></a>3.2 挂载镜像、配置yum源</h3><h4 id="3-2-1-controller节点"><a href="#3-2-1-controller节点" class="headerlink" title="3.2.1 controller节点"></a>3.2.1 controller节点</h4><p><strong>上传centos7.5镜像和chinaskills_cloud_iaas.iso镜像至controller节点。</strong><br><img src="https://img-blog.csdnimg.cn/47d012e4734d4884a31fa0d590252be4.png" alt="在这里插入图片描述" loading="lazy"><br><img src="https://img-blog.csdnimg.cn/f60d8ef478e84456b7e71e267fd0a49e.png" alt="在这里插入图片描述" loading="lazy"><br><strong>chinaskills_cloud_iaas.iso镜像上传方式如上。</strong></p>
+<p><strong>查看镜像是否已上传</strong><br><img src="https://img-blog.csdnimg.cn/f8c9ec47084049509569ed7addf5a967.png" alt="在这里插入图片描述" loading="lazy"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]<span class="meta"># mkdir /opt/&#123;iaas,centos&#125;	   #创建两个挂载镜像的文件夹</span></span><br><span class="line">[root@controller ~]<span class="meta"># mv /etc/yum.repos.d/CentOS-* /home	   #备份原yum源配置文件</span></span><br><span class="line">[root@controller ~]<span class="meta"># vi /etc/yum.repos.d/local.repo	   #创建本地yum源配置文件</span></span><br><span class="line"></span><br><span class="line">[iaas]</span><br><span class="line">name=iaas</span><br><span class="line">baseurl=file:<span class="comment">///opt/iaas/iaas-repo</span></span><br><span class="line">gpgcheck=<span class="number">0</span></span><br><span class="line">enabled=<span class="number">1</span></span><br><span class="line">[centos]</span><br><span class="line">name=centos</span><br><span class="line">baseurl=file:<span class="comment">///opt/centos</span></span><br><span class="line">gpgcheck=<span class="number">0</span></span><br><span class="line">enabled=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">[root@controller ~]<span class="meta"># mount -o loop /CentOS-7.5-x86_64-DVD-1804.iso /opt/centos</span></span><br><span class="line">[root@controller ~]<span class="meta"># mount -o loop /Chinaskill_Cloud_iaas.iso /opt/iaas</span></span><br><span class="line"></span><br><span class="line">[root@controller ~]<span class="meta"># yum clean all	#更新yum源配置</span></span><br><span class="line">[root@controller ~]<span class="meta"># yum repolist   #显示仓库</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/3348a313242c41dab685c8efe9b92303.png" alt="在这里插入图片描述" loading="lazy"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#搭建ftp服务器</span><br><span class="line">[root@controller ~]<span class="meta"># yum -y install vsftpd</span></span><br><span class="line">[root@controller ~]<span class="meta"># vi /etc/vsftpd/vsftpd.conf</span></span><br><span class="line">添加 anon_root=/opt/</span><br><span class="line">[root@controller ~]<span class="meta"># systemctl restart vsftpd</span></span><br><span class="line">[root@controller ~]<span class="meta"># systemctl enable vsftpd</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-2-compute节点"><a href="#3-2-2-compute节点" class="headerlink" title="3.2.2 compute节点"></a>3.2.2 compute节点</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@compute ~]<span class="meta"># mv /etc/yum.repos.d/CentOS-* /home	   #备份原yum源配置文件</span></span><br><span class="line">[root@compute ~]<span class="meta"># vi /etc/yum.repos.d/local.repo	   #创建本地yum源配置文件</span></span><br><span class="line"></span><br><span class="line">[centos]</span><br><span class="line">name=centos</span><br><span class="line">baseurl=ftp:<span class="comment">//192.168.100.10/centos</span></span><br><span class="line">gpgcheck=<span class="number">0</span></span><br><span class="line">enabled=<span class="number">1</span></span><br><span class="line">[iaas]</span><br><span class="line">name=iaas</span><br><span class="line">baseurl=ftp:<span class="comment">//192.168.100.10/iaas-repo</span></span><br><span class="line">gpgcheck=<span class="number">0</span></span><br><span class="line">enabled=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">[root@compute ~]<span class="meta"># yum clean all	#更新yum源配置</span></span><br><span class="line">[root@compute ~]<span class="meta"># yum repolist   #显示仓库</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/79d9774bfd094aa1a0ee2eee4c358823.png" alt="在这里插入图片描述" loading="lazy"><br><img src="https://img-blog.csdnimg.cn/e450303ade1f4d6eb4f891f4b111580c.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="3-3-计算节点分区"><a href="#3-3-计算节点分区" class="headerlink" title="3.3 计算节点分区"></a>3.3 计算节点分区</h3><p>在compute节点上利用空白分区划分2个100G分区。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">[root@compute ~]<span class="meta"># fdisk /dev/sdb</span></span><br><span class="line">欢迎使用 fdisk (util-linux <span class="number">2.23</span><span class="number">.2</span>)。</span><br><span class="line"> </span><br><span class="line">更改将停留在内存中，直到您决定将更改写入磁盘。</span><br><span class="line">使用写入命令前请三思。</span><br><span class="line"> </span><br><span class="line">Device does not contain a recognized partition table</span><br><span class="line">使用磁盘标识符 <span class="number">0x34bc5373</span> 创建新的 DOS 磁盘标签。</span><br><span class="line"> </span><br><span class="line">命令(输入 m 获取帮助)：n</span><br><span class="line">Partition type:</span><br><span class="line">   p   <span class="title function_">primary</span> <span class="params">(<span class="number">0</span> primary, <span class="number">0</span> extended, <span class="number">4</span> <span class="built_in">free</span>)</span></span><br><span class="line">   e   extended</span><br><span class="line"><span class="title function_">Select</span> <span class="params">(<span class="keyword">default</span> p)</span>: </span><br><span class="line">Using <span class="keyword">default</span> response p</span><br><span class="line">分区号 <span class="params">(<span class="number">1</span><span class="number">-4</span>，默认 <span class="number">1</span>)</span>：</span><br><span class="line">起始 扇区 <span class="params">(<span class="number">2048</span><span class="number">-209715199</span>，默认为 <span class="number">2048</span>)</span>：</span><br><span class="line">将使用默认值 2048</span><br><span class="line">Last 扇区, +扇区 or +size&#123;K,M,G&#125; (<span class="number">2048</span><span class="number">-209715199</span>，默认为 <span class="number">209715199</span>)：+<span class="number">25</span>G</span><br><span class="line">分区 <span class="number">1</span> 已设置为 Linux 类型，大小设为 <span class="number">25</span> GiB</span><br><span class="line"> </span><br><span class="line">命令(输入 m 获取帮助)：n</span><br><span class="line">Partition type:</span><br><span class="line">   p   <span class="title function_">primary</span> <span class="params">(<span class="number">1</span> primary, <span class="number">0</span> extended, <span class="number">3</span> <span class="built_in">free</span>)</span></span><br><span class="line">   e   extended</span><br><span class="line"><span class="title function_">Select</span> <span class="params">(<span class="keyword">default</span> p)</span>: </span><br><span class="line">Using <span class="keyword">default</span> response p</span><br><span class="line">分区号 <span class="params">(<span class="number">2</span><span class="number">-4</span>，默认 <span class="number">2</span>)</span>：</span><br><span class="line">起始 扇区 <span class="params">(<span class="number">52430848</span><span class="number">-209715199</span>，默认为 <span class="number">52430848</span>)</span>：</span><br><span class="line">将使用默认值 52430848</span><br><span class="line">Last 扇区, +扇区 or +size&#123;K,M,G&#125; (<span class="number">52430848</span><span class="number">-209715199</span>，默认为 <span class="number">209715199</span>)：+<span class="number">25</span>G</span><br><span class="line">分区 <span class="number">2</span> 已设置为 Linux 类型，大小设为 <span class="number">25</span> GiB</span><br><span class="line"> </span><br><span class="line">命令(输入 m 获取帮助)：w</span><br><span class="line">The partition table has been altered!</span><br><span class="line"> </span><br><span class="line">Calling <span class="title function_">ioctl</span><span class="params">()</span> to re-read partition table.</span><br><span class="line">正在同步磁盘。</span><br><span class="line">[root@compute ~]<span class="meta"># lsblk </span></span><br><span class="line">NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT</span><br><span class="line">sda               8:0    0  200G  0 disk </span><br><span class="line">├─sda1            8:1    0    1G  0 part /boot</span><br><span class="line">└─sda2            8:2    0  199G  0 part </span><br><span class="line">  ├─centos-root 253:0    0   50G  0 lvm  /</span><br><span class="line">  ├─centos-swap 253:1    0    2G  0 lvm  [SWAP]</span><br><span class="line">  └─centos-home 253:2    0  147G  0 lvm  /home</span><br><span class="line">sdb               8:16   0  100G  0 disk </span><br><span class="line">├─sdb1            8:17   0   25G  0 part </span><br><span class="line">└─sdb2            8:18   0   25G  0 part </span><br><span class="line">sr0              11:0    1  4.2G  0 rom  </span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/f0162da1fcb34378ab44643f38734b7d.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="3-4-编辑环境变量"><a href="#3-4-编辑环境变量" class="headerlink" title="3.4 编辑环境变量"></a>3.4 编辑环境变量</h3><p><strong>controller和compute节点都要操作</strong></p>
+<p>编辑文件/etc/xiandian/openrc.sh,此文件是安装过程中的各项参数，根据每项参数上一行的说明及服务器实际情况进行配置。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]<span class="meta"># yum -y install iaas-xiandian</span></span><br><span class="line">[root@controller ~]<span class="meta"># vi /etc/xiandian/openrc.sh</span></span><br><span class="line">[root@compute ~]<span class="meta"># yum -y install iaas-xiandian</span></span><br><span class="line">[root@compute ~]<span class="meta"># vi /etc/xiandian/openrc.sh</span></span><br><span class="line"></span><br><span class="line">HOST_IP=（控制节点IP地址）</span><br><span class="line">HOST_PASS=<span class="number">000000</span></span><br><span class="line">HOST_NAME=（控制节点主机名）</span><br><span class="line">HOST_IP_NODE=（计算节点IP地址）</span><br><span class="line">HOST_PASS_NODE=<span class="number">000000</span></span><br><span class="line">HOST_NAME_NODE=（控制节点主机名）</span><br><span class="line">network_segment_IP=<span class="number">192.168</span><span class="number">.100</span><span class="number">.0</span>/<span class="number">24</span></span><br><span class="line">RABBIT_USER=openstack</span><br><span class="line">RABBIT_PASS=<span class="number">000000</span></span><br><span class="line">DB_PASS=<span class="number">000000</span></span><br><span class="line">DOMAIN_NAME=demo</span><br><span class="line">ADMIN_PASS=<span class="number">000000</span></span><br><span class="line">DEMO_PASS=<span class="number">000000</span></span><br><span class="line">KEYSTONE_DBPASS=<span class="number">000000</span></span><br><span class="line">GLANCE_DBPASS=<span class="number">000000</span></span><br><span class="line">GLANCE_PASS=<span class="number">000000</span></span><br><span class="line">NOVA_DBPASS=<span class="number">000000</span></span><br><span class="line">NOVA_PASS=<span class="number">000000</span></span><br><span class="line">NEUTRON_DBPASS=<span class="number">000000</span></span><br><span class="line">NEUTRON_PASS=<span class="number">000000</span></span><br><span class="line">METADATA_SECRET=<span class="number">000000</span></span><br><span class="line">INTERFACE_IP=（当前节点IP地址）</span><br><span class="line">INTERFACE_NAME=ens34 （外部网络网卡名称）</span><br><span class="line">Physical_NAME=provider （外部网络适配器名称）</span><br><span class="line">minvlan=（vlan网络范围的第一个vlanID）</span><br><span class="line">maxvlan=vlan网络范围的最后一个vlanID）</span><br><span class="line">CINDER_DBPASS=<span class="number">000000</span></span><br><span class="line">CINDER_PASS=<span class="number">000000</span></span><br><span class="line">BLOCK_DISK=（计算节点第一块磁盘分区名）</span><br><span class="line">SWIFT_PASS=<span class="number">000000</span></span><br><span class="line">OBJECT_DISK=（计算节点第二块磁盘分区名）</span><br><span class="line">STORAGE_LOCAL_NET_IP=（计算节点IP地址）</span><br><span class="line">HEAT_DBPASS=<span class="number">000000</span></span><br><span class="line">HEAT_PASS=<span class="number">000000</span></span><br><span class="line">ZUN_DBPASS=<span class="number">000000</span></span><br><span class="line">ZUN_PASS=<span class="number">000000</span></span><br><span class="line">KURYR_DBPASS=<span class="number">000000</span></span><br><span class="line">KURYR_PASS=<span class="number">000000</span></span><br><span class="line">CEILOMETER_DBPASS=<span class="number">000000</span></span><br><span class="line">CEILOMETER_PASS=<span class="number">000000</span></span><br><span class="line">AODH_DBPASS=<span class="number">000000</span></span><br><span class="line">AODH_PASS=<span class="number">000000</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-5-通过脚本安装服务"><a href="#3-5-通过脚本安装服务" class="headerlink" title="3.5 通过脚本安装服务"></a>3.5 通过脚本安装服务</h3><h4 id="3-5-1-执行脚本iaas-pre-host-sh进行安装"><a href="#3-5-1-执行脚本iaas-pre-host-sh进行安装" class="headerlink" title="3.5.1 执行脚本iaas-pre-host.sh进行安装"></a>3.5.1 执行脚本iaas-pre-host.sh进行安装</h4><p><strong>controller节点：</strong><br>安装完成后同时重启，重启后需重新挂载iso镜像</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]<span class="meta"># iaas-pre-host.sh</span></span><br><span class="line">[root@controller ~]<span class="meta"># reboot  #重启</span></span><br><span class="line">[root@controller ~]<span class="meta"># mount -o loop CentOS-7-x86_64-DVD-1804.iso /opt/centos/</span></span><br><span class="line">[root@controller ~]<span class="meta"># mount -o loop chinaskills_cloud_iaas.iso /opt/iaas/</span></span><br></pre></td></tr></table></figure>
+<p><strong>compute节点：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]<span class="meta"># iaas-pre-host.sh</span></span><br><span class="line">[root@controller ~]<span class="meta"># reboot  #重启</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-5-2-Mysql数据库服务"><a href="#3-5-2-Mysql数据库服务" class="headerlink" title="3.5.2 Mysql数据库服务"></a>3.5.2 Mysql数据库服务</h4><p><strong>controller节点：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]<span class="meta"># iaas-install-mysql.sh</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-5-3-keystone认证服务"><a href="#3-5-3-keystone认证服务" class="headerlink" title="3.5.3 keystone认证服务"></a>3.5.3 keystone认证服务</h4><p><strong>controller节点：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]<span class="meta"># iaas-install-keystone.s</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-5-4-Glance镜像服务"><a href="#3-5-4-Glance镜像服务" class="headerlink" title="3.5.4 Glance镜像服务"></a>3.5.4 Glance镜像服务</h4><p><strong>controller节点：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]<span class="meta"># iaas-install-glance.sh</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-5-5-nova计算服务"><a href="#3-5-5-nova计算服务" class="headerlink" title="3.5.5 nova计算服务"></a>3.5.5 nova计算服务</h4><p><strong>controller节点：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]<span class="meta"># iaas-install-nova-controller.sh</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>compute节点：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@compute ~]<span class="meta"># iaas-install-nova-compute.sh </span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-5-6-Neutron网络服务"><a href="#3-5-6-Neutron网络服务" class="headerlink" title="3.5.6 Neutron网络服务"></a>3.5.6 Neutron网络服务</h4><p><strong>controller节点：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]<span class="meta"># iaas-install-neutron-controller.sh</span></span><br></pre></td></tr></table></figure>
+<p><strong>compute节点：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@compute ~]<span class="meta"># iaas-install-neutron-compute.sh</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-5-7-Dashboard服务"><a href="#3-5-7-Dashboard服务" class="headerlink" title="3.5.7 Dashboard服务"></a>3.5.7 Dashboard服务</h4><p><strong>controller节点：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]<span class="meta"># iaas-install-dashboard.sh</span></span><br></pre></td></tr></table></figure>
+
+<p>在浏览器中输入<a target="_blank" rel="noopener" href="http://192.168.100.10/dashboard">http://192.168.100.10/dashboard</a></p>
+<p><strong>注：检查防火墙规则，确保允许http服务相关端口通行，或者关闭防火墙</strong></p>
+<p>Domain：demo<br>用户名：admin<br>密码：000000<br><img src="https://img-blog.csdnimg.cn/856c695ec52b442fb544229e6ae21851.png" alt="在这里插入图片描述" loading="lazy"><br>出现以下图示表示云平台搭建成功。</p>
+<p><img src="https://img-blog.csdnimg.cn/107733ea6750470e9f064fc3c1b7d7f0.png" alt="在这里插入图片描述" loading="lazy"></p>
+<blockquote>
+<p>期待下次的分享，别忘了三连支持博主呀~<br>我是 <strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_52716296?type=blog">念舒_C.ying</a></strong> ，期待你的关注~💪💪💪</p>
+</blockquote>
+
+</article>
+    
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        念舒
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="https://nianshu2022.github.io/2022/08/20/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91%E6%90%AD%E5%BB%BAopenstack%E4%BA%91%E5%B9%B3%E5%8F%B0/" title="【OpenStack云平台】搭建openstack云平台">https://nianshu2022.github.io/2022/08/20/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91%E6%90%AD%E5%BB%BAopenstack%E4%BA%91%E5%B9%B3%E5%8F%B0/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> 许可协议。
+    </li>
+</ul>
+
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <a href="/2022/08/26/%E7%BB%99%E5%A5%B3%E5%8F%8B%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/" class="trm-cover-frame trm-anima-link">
+            <img src="https://img-blog.csdnimg.cn/19f1be9adb9f43bc96703e15ddffa679.jpeg" alt="cover">
+        </a>
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%8E%A2%E7%B4%A2%E7%BB%8F%E9%AA%8C/">
+                    探索经验
+                </a>
+            </div>
+            <h5>
+                <a href="/2022/08/26/%E7%BB%99%E5%A5%B3%E5%8F%8B%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/" class="trm-anima-link">
+                    给女友的微信公众号消息推送
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/08/26</li>
+                <li>19:00</li>
+                
+                    <li>1k</li>
+                
+                
+                    <li>5</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <a href="/2022/08/10/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91SecureCRT%20%E8%BF%9E%E6%8E%A5%20CentOS%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="trm-cover-frame trm-anima-link">
+            <img src="https://img-blog.csdnimg.cn/ae60dc1533414d60bde20719edf68c5d.jpeg" alt="cover">
+        </a>
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                    深度学习
+                </a>
+            </div>
+            <h5>
+                <a href="/2022/08/10/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91SecureCRT%20%E8%BF%9E%E6%8E%A5%20CentOS%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="trm-anima-link">
+                    【OpenStack云平台】SecureCRT 连接 CentOS虚拟机
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/08/10</li>
+                <li>19:00</li>
+                
+                    <li>396</li>
+                
+                
+                    <li>1</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation" data-scroll data-scroll-offset="50">
+
+    
+        <div class="trm-footer-item">
+            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">陇ICP备20220616号</a>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2022- 2022</span>
+            <span class="footer-separator">·</span>
+            <span class="trm-accent-color">念舒_C.ying</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.2
+            </span>
+            <span class="footer-separator"> | </span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v1.0（试运行）
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item">
+            博客已萌萌哒运行 <span id="since" class="trm-accent-color"></span> 天
+        </div>
+     
+
+     
+</footer>
+
+<script>
+    function show_date_time () {
+        BirthDay = new Date("11/15/2022 00:00:00");
+        today = new Date();
+        timeold = (today.getTime() - BirthDay.getTime());
+        msPerDay = 24 * 60 * 60 * 1000
+        day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+</script>
+ 
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+          </div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+
+  </div>
+  <!-- app wrapper end -->
+
+  <div id="trm-back-top" class="trm-back-top">
+    <i class="fas fa-arrow-up"></i>
+</div>
+  
+<div class="trm-search-popup">
+    <div class="trm-search-header">
+        <span class="trm-search-popup-btn-close">
+            <i class="fas fa-times"></i>
+        </span>
+    </div>
+    <div class="form trm-search-form">
+        <input class="trm-search-input" type="text" placeholder="搜索...">
+    </div>
+    <div class="trm-search-result-container">
+
+    </div>
+</div>
+
+  <!-- Plugin -->
+
+
+
+    
+    
+
+    
+<script src="//cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+    
+<script src="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=1.0（试运行）"></script>
+    
+
+    
+        
+<script src="//cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=1.0（试运行）"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+
+    <!-- 评论插件 -->
+    
+        
+        
+    
+
+
+
+<!-- 评论插件 -->
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=1.0（试运行）"></script>
+
+</body>
+
+</html>

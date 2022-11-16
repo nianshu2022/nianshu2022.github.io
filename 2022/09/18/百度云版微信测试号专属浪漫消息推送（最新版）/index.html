@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="百度云版微信测试号专属浪漫消息推送（最新版）一、注册百度云账号地址：https:&#x2F;&#x2F;login.bce.baidu.com&#x2F;?redirect&#x3D;https%3A%2F%2Fconsole.bce.baidu.com%2Fcfc%2F%3F_%3D1661492571497#&#x2F;cfc&#x2F;functions 1.搜索云函数 2.立即体验 3.创建函数 4.选择模板空白函数，函数名称自定义，运行时选 PH">
+<meta property="og:type" content="article">
+<meta property="og:title" content="百度云版微信测试号专属浪漫消息推送（最新版）">
+<meta property="og:url" content="https://nianshu2022.github.io/2022/09/18/%E7%99%BE%E5%BA%A6%E4%BA%91%E7%89%88%E5%BE%AE%E4%BF%A1%E6%B5%8B%E8%AF%95%E5%8F%B7%E4%B8%93%E5%B1%9E%E6%B5%AA%E6%BC%AB%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81%EF%BC%88%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%89/index.html">
+<meta property="og:site_name" content="念舒_C.ying">
+<meta property="og:description" content="百度云版微信测试号专属浪漫消息推送（最新版）一、注册百度云账号地址：https:&#x2F;&#x2F;login.bce.baidu.com&#x2F;?redirect&#x3D;https%3A%2F%2Fconsole.bce.baidu.com%2Fcfc%2F%3F_%3D1661492571497#&#x2F;cfc&#x2F;functions 1.搜索云函数 2.立即体验 3.创建函数 4.选择模板空白函数，函数名称自定义，运行时选 PH">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3f6cfb80e8fa482eb0b683d6e1726c3c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2de8c140f9f54918b1f8414fcddc6b17.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9aca3310d19d471b89c15d9057311c65.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/54e5f85f49c547f4922f5d9fd4120bdd.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/609f5e3c725d45e3921bdaafac38d892.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/eaa1c3bc5689464cbbd3c139d91a7ce6.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/489a0f9e92c344888e1b7b6cc5264985.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c80e5f0d2bf04c2db712abfb1b769445.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/fd0a25b90f084da88ba3b36e619e28f3.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/45fadfaff1584866bb286f4892c93092.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/047c2e062acc47b797729f45190784bd.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c8e90e5075424a7cb5b5874d1ea0546d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a06880cbf390430b9ed83e9342274350.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2167a1cb8c474b00831fb4a9d20fae7c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6afbf96e5d914206911eff60a4af74ca.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7277b1793e0043ebba0bb567b874e976.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1bdea037baef44dd9b523af342d7378e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/cca8600077fb4ed282f63562ab8119ff.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3e4ba8f9ae1447ae8fd0fbbe864b438c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/237ee876eb034c0f8e09d39ed1e7d622.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/67125f9011994f8ba03f8c52c9f92ef1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7f770615d6c4483db10a033a24182da7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8076f393a9054b6b906db5e13734a792.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ea3a46ec9c38466abc42bc6d563b91b5.jpeg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9023a0facd184a579b172dd8e8b3a11b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/caab2aa1174c4170813056042b1557d7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/00715472f2fc43d7bea21da47a91bcb6.png">
+<meta property="article:published_time" content="2022-09-18T11:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-16T06:15:34.671Z">
+<meta property="article:author" content="念舒">
+<meta property="article:tag" content="微信公众号">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/3f6cfb80e8fa482eb0b683d6e1726c3c.png">
+
+
+<title >百度云版微信测试号专属浪漫消息推送（最新版）</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=1.0（试运行）' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=1.0（试运行）' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+
+
+    
+
+    
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"nianshu2022.github.io","author":"念舒","root":"/","typed_text":["O&M Engineer"],"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","appleTouchIcon":null,"webmanifest":null,"visibilitychange":true,"hidden":"/failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"theme_version":"1.0（试运行）","theme":{"switch":true,"default":"style-light"},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:nianshu2022.github.io 念舒_C.ying","domain":"nianshu2022.github.io","path":"search.xml"},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。"},"creative_commons":{"license":"by-nc-sa","language":"deed.zh","post":true,"clipboard":true,"url":"https://nianshu2022.github.io"},"swup":false};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=1.0（试运行）" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+
+    
+
+
+
+<!-- Site Analytics -->
+
+    
+        <!-- Baidu Analytics -->
+        <script defer>
+            var _hmt = _hmt || [];
+            (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?3349ac31b537bd3389e14e79b583dc6a";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+     
+
+    
+
+    
+ 
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" data-scroll-container style="opacity: 0">
+          <div data-scroll-section id="content" class="trm-scroll-section">
+
+            <div class="locomotive-scroll__sticky-target" style=" position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
+
+            <!-- top bar -->
+            <header class="trm-top-bar" data-scroll data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="-10">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+			<a href="/" class="trm-logo-frame trm-anima-link">
+				
+					<img src="/img/favicon.svg" alt="logo">
+				
+				
+					<div class="trm-logo-text">
+						念舒_<span>C.ying</span>
+					</div>
+				
+			</a>
+			<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+
+			<!-- menu -->
+			<div class="trm-menu">
+				<nav>
+					<ul>
+						
+						<li class="menu-item-has-children ">
+							<a  href="/" target="">
+								🏠主页
+							</a>
+							
+						</li>
+						
+						<li class="menu-item-has-children ">
+							<a  href="/archives/" target="">
+								📋归档
+							</a>
+							
+							<ul>
+								
+								<li>
+									<a  href="/categories/" target="">
+										🔰分类
+									</a>
+								</li>
+								
+								<li>
+									<a  href="/tags/" target="">
+										🔖标签
+									</a>
+								</li>
+								
+							</ul>
+							
+						</li>
+						
+						<li class="menu-item-has-children ">
+							<a  href="/child/" target="">
+								🏘仓库
+							</a>
+							
+						</li>
+						
+						<li class="menu-item-has-children ">
+							<a  href="/links/" target="">
+								👥友邻
+							</a>
+							
+						</li>
+						
+						<li class="menu-item-has-children ">
+							<a  href="/about/" target="">
+								👨‍💻壹个人
+							</a>
+							
+						</li>
+						
+						<li class="menu-item-has-children ">
+							<a  href="/" target="">
+								🔍搜索
+							</a>
+							
+						</li>
+						
+					</ul>
+				</nav>
+			</div>
+			<!-- menu end -->
+			
+			<!-- mode switcher place -->
+			
+			<div class="trm-mode-switcher-place">
+				<!-- <div class="trm-hidden-switcher"> -->
+					<div class="trm-mode-switcher">
+					  <i class="far fa-sun"></i>
+					  <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+					  <label class="trm-swich" for="trm-swich"></label>
+					  <i class="far fa-moon"></i>
+					</div>
+				  <!-- </div> -->
+			</div>
+			
+			<!-- mode switcher place end -->
+
+			
+				
+				<div id="trm-search-btn" class="trm-search-btn">
+					<i class="fas fa-search"></i>
+				</div>
+				 
+			 
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner" data-scroll data-scroll-direction="vertical">
+    
+    <!-- banner video cover -->
+    <video autoplay="autoplay" loop muted playsinline webkit-playinginline class="trm-banner-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed="-3">
+        <source src="//cdn.moji.com/websrc/video/autumn20190924.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        Your browser does not support HTML5 video.
+    </video>
+    <!-- banner video cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container" data-scroll data-scroll-direction="vertical" data-scroll-speed="0">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            百度云版微信测试号专属浪漫消息推送（最新版）
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2022
+                                    </span
+                                ></li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <a href="#about-triger" data-scroll-to="#about-triger" data-scroll-offset="-130" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </a>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    
+
+<div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
+    
+        <div class="trm-tabs" id="sidebar-tabs">
+           <div class="trm-tabs-nav trm-mb-40" id="trm-tabs-nav">
+                <div data-to="tabs-user" class="trm-tabs-nav-item"><i class="fas fa-user-alt"></i></div>
+                <div data-to="tabs-toc" class="trm-tabs-nav-item active"><i class="fas fa-th-list"></i></div>
+           </div>
+            <div name="tabs-user" class="trm-tabs-item">
+                <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20"><img class="trm-avatar" src="/img/avatar.jpg" alt="Avatar"> </div>
+    <h5 class="trm-name trm-mb-15">
+        念舒_C.ying
+    </h5>
+    
+    <div class="trm-label">
+        I`m
+        <span class="trm-typed-text">
+            <!-- Words for theme.user.typedText -->
+        </span>
+    </div>
+    
+</div>
+<!-- card header end -->
+
+<!-- sidebar social -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+
+<div class="trm-social">
+    
+        <a href="https://github.com/nianshu2022" title="Github" rel="nofollow" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+    
+        <a href="https://gitee.com/nianshu2022" title="Gitee" rel="nofollow" target="_blank">
+            <i class="fab fa-github-alt"></i>
+        </a>
+    
+        <a href="https://weibo.com/u/7418091828" title="weibo" rel="nofollow" target="_blank">
+            <i class="fab fa-weibo"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+
+<!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                国家🌏:
+            </div>
+            <div class="trm-label trm-label-light">
+                中国
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                坐标📍:
+            </div>
+            <div class="trm-label trm-label-light">
+                兰州
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                落地日🚼:
+            </div>
+            <div class="trm-label trm-label-light">
+                2001.02
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                星座♒️:
+            </div>
+            <div class="trm-label trm-label-light">
+                水瓶座
+            </div>
+        </li>
+    
+</ul>
+
+<!-- info end -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<!-- action button -->
+<div class="text-center">
+    <a href="mailto:2478951652@qq.com" class="trm-btn">
+        联系我
+        <i class="far fa-envelope"></i>
+    </a>
+</div>
+<!-- action button end -->
+
+            </div>
+            <div name="tabs-toc" class="trm-tabs-item active">
+                <div class="post-toc">
+    <ol class="toc"><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#百度云版微信测试号专属浪漫消息推送（最新版）"  data-scroll-to="#百度云版微信测试号专属浪漫消息推送（最新版）"><span class="toc-number">1.</span> <span class="toc-text">百度云版微信测试号专属浪漫消息推送（最新版）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#一、注册百度云账号"  data-scroll-to="#一、注册百度云账号"><span class="toc-number">1.1.</span> <span class="toc-text">一、注册百度云账号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#1-搜索云函数"  data-scroll-to="#1-搜索云函数"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.搜索云函数</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#2-立即体验"  data-scroll-to="#2-立即体验"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.立即体验</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#3-创建函数"  data-scroll-to="#3-创建函数"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.创建函数</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#4-选择模板"  data-scroll-to="#4-选择模板"><span class="toc-number">1.1.4.</span> <span class="toc-text">4.选择模板</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#5-进入代码编辑页"  data-scroll-to="#5-进入代码编辑页"><span class="toc-number">1.1.5.</span> <span class="toc-text">5.进入代码编辑页</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#6-可以自定义文字，也可以留空"  data-scroll-to="#6-可以自定义文字，也可以留空"><span class="toc-number">1.1.6.</span> <span class="toc-text">6.可以自定义文字，也可以留空</span></a></li></ol></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#二、注册易客云"  data-scroll-to="#二、注册易客云"><span class="toc-number">1.2.</span> <span class="toc-text">二、注册易客云</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#1-复制自己的易客云appid和-appsecret-换成自己的appid、appsecret、城市"  data-scroll-to="#1-复制自己的易客云appid和-appsecret-换成自己的appid、appsecret、城市"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.复制自己的易客云appid和 appsecret  换成自己的appid、appsecret、城市</span></a></li></ol></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#三、微信公众号测试平台"  data-scroll-to="#三、微信公众号测试平台"><span class="toc-number">1.3.</span> <span class="toc-text">三、微信公众号测试平台</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#1-复制微信公众号测试号的appID和appsecret到php代码里进行替换（单引号不能丢）"  data-scroll-to="#1-复制微信公众号测试号的appID和appsecret到php代码里进行替换（单引号不能丢）"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.复制微信公众号测试号的appID和appsecret到php代码里进行替换（单引号不能丢）</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#2-创建模板消息"  data-scroll-to="#2-创建模板消息"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.创建模板消息</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#3-填写好标题后提交"  data-scroll-to="#3-填写好标题后提交"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.填写好标题后提交</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#4-将模板id复制到代码里"  data-scroll-to="#4-将模板id复制到代码里"><span class="toc-number">1.3.4.</span> <span class="toc-text">4.将模板id复制到代码里</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#5-然后让你女朋友关注这个微信公众号测试号，获取她的微信号-然后复制到代码里"  data-scroll-to="#5-然后让你女朋友关注这个微信公众号测试号，获取她的微信号-然后复制到代码里"><span class="toc-number">1.3.5.</span> <span class="toc-text">5.然后让你女朋友关注这个微信公众号测试号，获取她的微信号,然后复制到代码里</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#6-修改为自己日期"  data-scroll-to="#6-修改为自己日期"><span class="toc-number">1.3.6.</span> <span class="toc-text">6.修改为自己日期</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#7-代码修改完保存-测试-执行"  data-scroll-to="#7-代码修改完保存-测试-执行"><span class="toc-number">1.3.7.</span> <span class="toc-text">7.代码修改完保存  测试  执行</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#8-测试成功"  data-scroll-to="#8-测试成功"><span class="toc-number">1.3.8.</span> <span class="toc-text">8.测试成功</span></a></li></ol></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#四、定时运行php"  data-scroll-to="#四、定时运行php"><span class="toc-number">1.4.</span> <span class="toc-text">四、定时运行php</span></a></li></ol></li></ol>
+</div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="col-lg-8">
+                <div class="trm-content" id="trm-content">
+                    <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
+
+                    <div class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="far fa-calendar-alt trm-icon"></i><br>
+            09/18
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="far fa-clock trm-icon"></i><br>
+            19:00
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="far fa-user trm-icon"></i><br>
+            念舒_C.ying
+        </div>
+    </div> 
+</div>
+<div class="trm-card ">
+    <article class="trm-publication">
+    <h1 id="百度云版微信测试号专属浪漫消息推送（最新版）"><a href="#百度云版微信测试号专属浪漫消息推送（最新版）" class="headerlink" title="百度云版微信测试号专属浪漫消息推送（最新版）"></a>百度云版微信测试号专属浪漫消息推送（最新版）</h1><h2 id="一、注册百度云账号"><a href="#一、注册百度云账号" class="headerlink" title="一、注册百度云账号"></a>一、注册百度云账号</h2><p>地址：<a target="_blank" rel="noopener" href="https://login.bce.baidu.com/?redirect=https://console.bce.baidu.com/cfc/?_=1661492571497#/cfc/functions">https://login.bce.baidu.com/?redirect=https%3A%2F%2Fconsole.bce.baidu.com%2Fcfc%2F%3F_%3D1661492571497#/cfc/functions</a><br><img src="https://img-blog.csdnimg.cn/3f6cfb80e8fa482eb0b683d6e1726c3c.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="1-搜索云函数"><a href="#1-搜索云函数" class="headerlink" title="1.搜索云函数"></a>1.搜索云函数</h3><p><img src="https://img-blog.csdnimg.cn/2de8c140f9f54918b1f8414fcddc6b17.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="2-立即体验"><a href="#2-立即体验" class="headerlink" title="2.立即体验"></a>2.立即体验</h3><p><img src="https://img-blog.csdnimg.cn/9aca3310d19d471b89c15d9057311c65.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="3-创建函数"><a href="#3-创建函数" class="headerlink" title="3.创建函数"></a>3.创建函数</h3><p><img src="https://img-blog.csdnimg.cn/54e5f85f49c547f4922f5d9fd4120bdd.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="4-选择模板"><a href="#4-选择模板" class="headerlink" title="4.选择模板"></a>4.选择模板</h3><p>空白函数，函数名称自定义，运行时选 PHP7.2（其他默认），下一步，提交。<br><img src="https://img-blog.csdnimg.cn/609f5e3c725d45e3921bdaafac38d892.png" alt="在这里插入图片描述" loading="lazy"></p>
+<p><img src="https://img-blog.csdnimg.cn/eaa1c3bc5689464cbbd3c139d91a7ce6.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="5-进入代码编辑页"><a href="#5-进入代码编辑页" class="headerlink" title="5.进入代码编辑页"></a>5.进入代码编辑页</h3><p><img src="https://img-blog.csdnimg.cn/489a0f9e92c344888e1b7b6cc5264985.png" alt="在这里插入图片描述" loading="lazy"></p>
+<p><img src="https://img-blog.csdnimg.cn/c80e5f0d2bf04c2db712abfb1b769445.png" alt="加粗样式" loading="lazy"></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$appId</span> = <span class="string">&#x27;abcdefgh&#x27;</span>; <span class="comment">//对应自己的appId</span></span><br><span class="line"><span class="variable">$appSecret</span> = <span class="string">&#x27;abcdefgh &#x27;</span>; <span class="comment">//对应自己的appSecret</span></span><br><span class="line"><span class="variable">$wxgzhurl</span> = <span class="string">&quot;https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=&quot;</span> . <span class="variable">$appId</span> . <span class="string">&quot;&amp;secret=&quot;</span> . <span class="variable">$appSecret</span>;</span><br><span class="line"><span class="variable">$access_token_Arr</span> = <span class="title function_ invoke__">https_request</span>(<span class="variable">$wxgzhurl</span>);</span><br><span class="line"><span class="variable">$access_token</span> = <span class="title function_ invoke__">json_decode</span>(<span class="variable">$access_token_Arr</span>, <span class="literal">true</span>);</span><br><span class="line"><span class="variable">$ACCESS_TOKEN</span> = <span class="variable">$access_token</span>[<span class="string">&#x27;access_token&#x27;</span>]; <span class="comment">//ACCESS_TOKEN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 什么时候恋爱的(格式别错)</span></span><br><span class="line"><span class="variable">$lovestart</span> = <span class="title function_ invoke__">strtotime</span>(<span class="string">&#x27;2022-06-16&#x27;</span>);</span><br><span class="line"><span class="variable">$end</span> = <span class="title function_ invoke__">time</span>();</span><br><span class="line"><span class="variable">$love</span> = <span class="title function_ invoke__">ceil</span>((<span class="variable">$end</span> - <span class="variable">$lovestart</span>) / <span class="number">86400</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Z 下一个生日是哪一天(格式别错)</span></span><br><span class="line"><span class="variable">$birthdaystart</span> = <span class="title function_ invoke__">strtotime</span>(<span class="string">&#x27;2023-02-24&#x27;</span>);</span><br><span class="line"><span class="variable">$end</span> = <span class="title function_ invoke__">time</span>();</span><br><span class="line"><span class="variable">$diff_days</span> = (<span class="variable">$birthdaystart</span> - <span class="variable">$end</span>);</span><br><span class="line"><span class="variable">$Zbirthday</span> = (<span class="keyword">int</span>)(<span class="variable">$diff_days</span>/<span class="number">86400</span>);</span><br><span class="line"><span class="variable">$Zbirthday</span> = <span class="title function_ invoke__">str_replace</span>(<span class="string">&quot;-&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$Zbirthday</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// C下一个生日是哪一天(格式别错)</span></span><br><span class="line"><span class="variable">$birthdaystart</span> = <span class="title function_ invoke__">strtotime</span>(<span class="string">&#x27;2023-04-19&#x27;</span>);</span><br><span class="line"><span class="variable">$end</span> = <span class="title function_ invoke__">time</span>();</span><br><span class="line"><span class="variable">$diff_days</span> = (<span class="variable">$birthdaystart</span> - <span class="variable">$end</span>);</span><br><span class="line"><span class="variable">$birthday</span> = (<span class="keyword">int</span>)(<span class="variable">$diff_days</span>/<span class="number">86400</span>);</span><br><span class="line"><span class="variable">$birthday</span> = <span class="title function_ invoke__">str_replace</span>(<span class="string">&quot;-&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="variable">$birthday</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$tianqiurl</span> = <span class="string">&#x27;https://v0.yiketianqi.com/api?unescape=1&amp;version=v63&amp;language=zh&amp;city=兰州&amp;appid=111111&amp;appsecret=1111111&#x27;</span>; <span class="comment">//修改为自己的</span></span><br><span class="line"><span class="variable">$tianqiapi</span> = <span class="title function_ invoke__">https_request</span>(<span class="variable">$tianqiurl</span>);</span><br><span class="line"><span class="variable">$tianqi</span> = <span class="title function_ invoke__">json_decode</span>(<span class="variable">$tianqiapi</span>, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$qinghuaqiurl</span> = <span class="string">&#x27;https://api.youguo56.com/api/chp/&#x27;</span>;</span><br><span class="line"><span class="variable">$qinghuaapi</span> = <span class="title function_ invoke__">https_request</span>(<span class="variable">$qinghuaqiurl</span>);</span><br><span class="line"><span class="variable">$qinghua</span> = <span class="title function_ invoke__">json_decode</span>(<span class="variable">$qinghuaapi</span>, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 你自己的一句话</span></span><br><span class="line"><span class="variable">$yjh</span> = <span class="string">&#x27;Z_C恋爱日记&#x27;</span>; <span class="comment">//可以留空 也可以写上一句</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$touser</span> = <span class="string">&#x27;abcdefgh &#x27;</span>;  <span class="comment">//这个填你女朋友的openid</span></span><br><span class="line"><span class="variable">$data</span> = <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">&#x27;touser&#x27;</span> =&gt; <span class="variable">$touser</span>,</span><br><span class="line">    <span class="string">&#x27;template_id&#x27;</span> =&gt; <span class="string">&quot;abcdefgh &quot;</span>, <span class="comment">//改成自己的模板id，在微信后台模板消息里查看</span></span><br><span class="line">    <span class="string">&#x27;data&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">&#x27;first&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$yjh</span>,</span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot; #FFB6C1&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;keyword1&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;date&#x27;</span>], <span class="comment">//日期</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#1E90FF&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;keyword10&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;week&#x27;</span>],<span class="comment">//星期</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#1E90FF&quot;</span></span><br><span class="line">),</span><br><span class="line">        <span class="string">&#x27;keyword11&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;update_time&#x27;</span>],<span class="comment">//时间</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#1E90FF&quot;</span></span><br><span class="line">),</span><br><span class="line">        <span class="string">&#x27;keyword2&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;city&#x27;</span>],<span class="comment">//城市</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#DC143C&quot;</span></span><br><span class="line">),</span><br><span class="line">        <span class="string">&#x27;keyword20&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;country&#x27;</span>],<span class="comment">//国家</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#DC143C&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;keyword3&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;wea&#x27;</span>],<span class="comment">//今日天气</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#6495ED&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;keyword30&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;win&#x27;</span>],<span class="comment">//风</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#6495ED&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;keyword4&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">           <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;hours&#x27;</span>][<span class="string">&#x27;0&#x27;</span>][<span class="string">&#x27;wea&#x27;</span>],<span class="comment">//现在天气</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#4169E1&quot;</span></span><br><span class="line">),</span><br><span class="line">        <span class="string">&#x27;keyword40&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">           <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;hours&#x27;</span>][<span class="string">&#x27;0&#x27;</span>][<span class="string">&#x27;win&#x27;</span>],<span class="comment">//现在风</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#4169E1&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;keyword5&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;tem1&#x27;</span>],<span class="comment">//高温</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#FF7F50&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;keyword50&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;tem2&#x27;</span>],<span class="comment">//低温</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#AFEEEE&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;keyword6&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;sunrise&#x27;</span>],<span class="comment">//日出</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#FFDEAD&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;keyword60&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;sunset&#x27;</span>],<span class="comment">//日落</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#FFA500&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;keyword7&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$love</span> . <span class="string">&#x27;天&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#FA8072&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;keyword8&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$Zbirthday</span> . <span class="string">&#x27;天&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#F5DEB3&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;keyword80&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$birthday</span> . <span class="string">&#x27;天&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#F5DEB3&quot;</span></span><br><span class="line">        ),       </span><br><span class="line">        <span class="string">&#x27;keyword9&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$tianqi</span>[<span class="string">&#x27;air_tips&#x27;</span>],<span class="comment">//小贴士</span></span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#FFB6C1&quot;</span></span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&#x27;remark&#x27;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">&#x27;value&#x27;</span> =&gt; <span class="variable">$qinghuaapi</span>,</span><br><span class="line">            <span class="string">&#x27;color&#x27;</span> =&gt; <span class="string">&quot;#6495ED&quot;</span></span><br><span class="line">        ),</span><br><span class="line">    )</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 下面这些就不需要动了————————————————————————————————————————————————————————————————————————————————————————————</span></span><br><span class="line"><span class="variable">$json_data</span> = <span class="title function_ invoke__">json_encode</span>(<span class="variable">$data</span>);</span><br><span class="line"><span class="variable">$url</span> = <span class="string">&quot;https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=&quot;</span> . <span class="variable">$ACCESS_TOKEN</span>;</span><br><span class="line"><span class="variable">$res</span> = <span class="title function_ invoke__">https_request</span>(<span class="variable">$url</span>, <span class="title function_ invoke__">urldecode</span>(<span class="variable">$json_data</span>));</span><br><span class="line"><span class="variable">$res</span> = <span class="title function_ invoke__">json_decode</span>(<span class="variable">$res</span>, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$res</span>[<span class="string">&#x27;errcode&#x27;</span>] == <span class="number">0</span> &amp;&amp; <span class="variable">$res</span>[<span class="string">&#x27;errcode&#x27;</span>] == <span class="string">&quot;ok&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;发送成功！&lt;br/&gt;&quot;</span>;</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;发送失败！请检查代码！！！&lt;br/&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">https_request</span>(<span class="params"><span class="variable">$url</span>, <span class="variable">$data</span> = <span class="literal">null</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$curl</span> = <span class="title function_ invoke__">curl_init</span>();</span><br><span class="line">    <span class="title function_ invoke__">curl_setopt</span>(<span class="variable">$curl</span>, CURLOPT_URL, <span class="variable">$url</span>);</span><br><span class="line">    <span class="title function_ invoke__">curl_setopt</span>(<span class="variable">$curl</span>, CURLOPT_SSL_VERIFYPEER, <span class="literal">FALSE</span>);</span><br><span class="line">    <span class="title function_ invoke__">curl_setopt</span>(<span class="variable">$curl</span>, CURLOPT_SSL_VERIFYHOST, <span class="literal">FALSE</span>);</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">empty</span>(<span class="variable">$data</span>)) &#123;</span><br><span class="line">        <span class="title function_ invoke__">curl_setopt</span>(<span class="variable">$curl</span>, CURLOPT_POST, <span class="number">1</span>);</span><br><span class="line">        <span class="title function_ invoke__">curl_setopt</span>(<span class="variable">$curl</span>, CURLOPT_POSTFIELDS, <span class="variable">$data</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_ invoke__">curl_setopt</span>(<span class="variable">$curl</span>, CURLOPT_RETURNTRANSFER, <span class="number">1</span>);</span><br><span class="line">    <span class="variable">$output</span> = <span class="title function_ invoke__">curl_exec</span>(<span class="variable">$curl</span>);</span><br><span class="line">    <span class="title function_ invoke__">curl_close</span>(<span class="variable">$curl</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$output</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params"><span class="variable">$context</span></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 啥都没有   就是为了填执行失败的坑</span></span><br><span class="line">    <span class="comment"># return $ret;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-可以自定义文字，也可以留空"><a href="#6-可以自定义文字，也可以留空" class="headerlink" title="6.可以自定义文字，也可以留空"></a>6.可以自定义文字，也可以留空</h3><p><img src="https://img-blog.csdnimg.cn/fd0a25b90f084da88ba3b36e619e28f3.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h2 id="二、注册易客云"><a href="#二、注册易客云" class="headerlink" title="二、注册易客云"></a>二、注册易客云</h2><p>地址：<a target="_blank" rel="noopener" href="http://www.yiketianqi.com/user/register">http://www.yiketianqi.com/user/register</a></p>
+<p><img src="https://img-blog.csdnimg.cn/45fadfaff1584866bb286f4892c93092.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="1-复制自己的易客云appid和-appsecret-换成自己的appid、appsecret、城市"><a href="#1-复制自己的易客云appid和-appsecret-换成自己的appid、appsecret、城市" class="headerlink" title="1.复制自己的易客云appid和 appsecret  换成自己的appid、appsecret、城市"></a>1.复制自己的易客云appid和 appsecret  换成自己的appid、appsecret、城市</h3><p><img src="https://img-blog.csdnimg.cn/047c2e062acc47b797729f45190784bd.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h2 id="三、微信公众号测试平台"><a href="#三、微信公众号测试平台" class="headerlink" title="三、微信公众号测试平台"></a>三、微信公众号测试平台</h2><p>注册地址： <a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&amp;t=sandbox/index">http://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&amp;t=sandbox/index</a><br><img src="https://img-blog.csdnimg.cn/c8e90e5075424a7cb5b5874d1ea0546d.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="1-复制微信公众号测试号的appID和appsecret到php代码里进行替换（单引号不能丢）"><a href="#1-复制微信公众号测试号的appID和appsecret到php代码里进行替换（单引号不能丢）" class="headerlink" title="1.复制微信公众号测试号的appID和appsecret到php代码里进行替换（单引号不能丢）"></a>1.复制微信公众号测试号的appID和appsecret到php代码里进行替换（单引号不能丢）</h3><p><img src="https://img-blog.csdnimg.cn/a06880cbf390430b9ed83e9342274350.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="2-创建模板消息"><a href="#2-创建模板消息" class="headerlink" title="2.创建模板消息"></a>2.创建模板消息</h3><p><img src="https://img-blog.csdnimg.cn/2167a1cb8c474b00831fb4a9d20fae7c.png" alt="在这里插入图片描述" loading="lazy"><br>将下面的代码复制到模板内容里</p>
+<p>模板标题自定义（可以把这个心的表情复制上）❤ </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;first.DATA&#125;&#125;</span><br><span class="line"></span><br><span class="line">现在是&#123;&#123;keyword1.DATA&#125;&#125; &#123;&#123;keyword10.DATA&#125;&#125; &#123;&#123;keyword11.DATA&#125;&#125;</span><br><span class="line">国家：&#123;&#123;keyword20.DATA &#125;&#125; </span><br><span class="line">城市：&#123;&#123;keyword2.DATA&#125;&#125; </span><br><span class="line">今日天气：&#123;&#123;keyword3.DATA&#125;&#125; &#123;&#123;keyword30.DATA&#125;&#125;</span><br><span class="line">现在天气：&#123;&#123;keyword4.DATA&#125;&#125; &#123;&#123;keyword40.DATA&#125;&#125;</span><br><span class="line">最高温度：&#123;&#123;keyword5.DATA&#125;&#125; ℃</span><br><span class="line">最低温度：&#123;&#123;keyword50.DATA&#125;&#125; ℃</span><br><span class="line">日出：&#123;&#123;keyword6.DATA&#125;&#125; </span><br><span class="line">日落：&#123;&#123;keyword60.DATA&#125;&#125; </span><br><span class="line">今天是我们在一起的第 &#123;&#123;keyword7.DATA&#125;&#125; </span><br><span class="line">距离Z.jie的生日还有 &#123;&#123;keyword8.DATA&#125;&#125; </span><br><span class="line">距离C.ying的生日还有 &#123;&#123;keyword80.DATA&#125;&#125; </span><br><span class="line">小贴士：&#123;&#123;keyword9.DATA&#125;&#125; </span><br><span class="line">每日一句: &#123;&#123;remark.DATA&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>==模板中的文字可以自定义修改，每一句括号后面的字段不要修改==</p>
+<p><img src="https://img-blog.csdnimg.cn/6afbf96e5d914206911eff60a4af74ca.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="3-填写好标题后提交"><a href="#3-填写好标题后提交" class="headerlink" title="3.填写好标题后提交"></a>3.填写好标题后提交</h3><p><img src="https://img-blog.csdnimg.cn/7277b1793e0043ebba0bb567b874e976.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="4-将模板id复制到代码里"><a href="#4-将模板id复制到代码里" class="headerlink" title="4.将模板id复制到代码里"></a>4.将模板id复制到代码里</h3><p><img src="https://img-blog.csdnimg.cn/1bdea037baef44dd9b523af342d7378e.png" alt="在这里插入图片描述" loading="lazy"><br><img src="https://img-blog.csdnimg.cn/cca8600077fb4ed282f63562ab8119ff.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="5-然后让你女朋友关注这个微信公众号测试号，获取她的微信号-然后复制到代码里"><a href="#5-然后让你女朋友关注这个微信公众号测试号，获取她的微信号-然后复制到代码里" class="headerlink" title="5.然后让你女朋友关注这个微信公众号测试号，获取她的微信号,然后复制到代码里"></a>5.然后让你女朋友关注这个微信公众号测试号，获取她的微信号,然后复制到代码里</h3><p><img src="https://img-blog.csdnimg.cn/3e4ba8f9ae1447ae8fd0fbbe864b438c.png" alt="在这里插入图片描述" loading="lazy"><br><img src="https://img-blog.csdnimg.cn/237ee876eb034c0f8e09d39ed1e7d622.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="6-修改为自己日期"><a href="#6-修改为自己日期" class="headerlink" title="6.修改为自己日期"></a>6.修改为自己日期</h3><p>==这一次我设置了两个生日==<br><img src="https://img-blog.csdnimg.cn/67125f9011994f8ba03f8c52c9f92ef1.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="7-代码修改完保存-测试-执行"><a href="#7-代码修改完保存-测试-执行" class="headerlink" title="7.代码修改完保存  测试  执行"></a>7.代码修改完保存  测试  执行</h3><p><img src="https://img-blog.csdnimg.cn/7f770615d6c4483db10a033a24182da7.png" alt="在这里插入图片描述" loading="lazy"><br><img src="https://img-blog.csdnimg.cn/8076f393a9054b6b906db5e13734a792.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="8-测试成功"><a href="#8-测试成功" class="headerlink" title="8.测试成功"></a>8.测试成功</h3><p><img src="https://img-blog.csdnimg.cn/ea3a46ec9c38466abc42bc6d563b91b5.jpeg" alt="在这里插入图片描述" loading="lazy"></p>
+<h2 id="四、定时运行php"><a href="#四、定时运行php" class="headerlink" title="四、定时运行php"></a>四、定时运行php</h2><p><img src="https://img-blog.csdnimg.cn/9023a0facd184a579b172dd8e8b3a11b.png" alt="在这里插入图片描述" loading="lazy"></p>
+<p> <strong>定时触发器以UTC时间运行，即北京时间减去8个小时</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/caab2aa1174c4170813056042b1557d7.png" alt="**加粗样式**" loading="lazy"></p>
+<p>这里的计划表达式为 cron(0 23 * * ?)<br>每天下午的 23:00 (UTC) 触发；对应北京为每天早上07:00执行<br><img src="https://img-blog.csdnimg.cn/00715472f2fc43d7bea21da47a91bcb6.png" alt="在这里插入图片描述" loading="lazy"><br>开启定时触发器，这样就完成啦！</p>
+<blockquote>
+<p>期待下次的分享，别忘了三连支持博主呀~<br>我是 <strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_52716296?type=blog">念舒_C.ying</a></strong> ，期待你的关注~💪💪💪</p>
+</blockquote>
+
+</article>
+    
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        念舒
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="https://nianshu2022.github.io/2022/09/18/%E7%99%BE%E5%BA%A6%E4%BA%91%E7%89%88%E5%BE%AE%E4%BF%A1%E6%B5%8B%E8%AF%95%E5%8F%B7%E4%B8%93%E5%B1%9E%E6%B5%AA%E6%BC%AB%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81%EF%BC%88%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%89/" title="百度云版微信测试号专属浪漫消息推送（最新版）">https://nianshu2022.github.io/2022/09/18/%E7%99%BE%E5%BA%A6%E4%BA%91%E7%89%88%E5%BE%AE%E4%BF%A1%E6%B5%8B%E8%AF%95%E5%8F%B7%E4%B8%93%E5%B1%9E%E6%B5%AA%E6%BC%AB%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81%EF%BC%88%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%89/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> 许可协议。
+    </li>
+</ul>
+
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <a href="/2022/11/06/Ubuntu%2020.04%20%E5%BC%80%E5%90%AFroot%E6%9D%83%E9%99%90%E7%99%BB%E9%99%86%E3%80%81%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/" class="trm-cover-frame trm-anima-link">
+            <img src="https://img-blog.csdnimg.cn/84bdb7af59c2476ea52673d6a03df197.jpeg" alt="cover">
+        </a>
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                    深度学习
+                </a>
+            </div>
+            <h5>
+                <a href="/2022/11/06/Ubuntu%2020.04%20%E5%BC%80%E5%90%AFroot%E6%9D%83%E9%99%90%E7%99%BB%E9%99%86%E3%80%81%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/" class="trm-anima-link">
+                    Ubuntu 20.04 开启root权限登陆、网卡配置
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/11/06</li>
+                <li>19:00</li>
+                
+                    <li>208</li>
+                
+                
+                    <li>1</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <a href="/2022/09/03/%E6%97%A9%E5%AE%89%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%88%E5%9B%BD%E5%A4%96%E5%9F%8E%E5%B8%82%E3%80%81%E5%9B%BD%E5%86%85%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB%EF%BC%89/" class="trm-cover-frame trm-anima-link">
+            <img src="https://img-blog.csdnimg.cn/1fe2b6f3ef514a7dbc40ed868cdceb48.jpeg" alt="cover">
+        </a>
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%8E%A2%E7%B4%A2%E7%BB%8F%E9%AA%8C/">
+                    探索经验
+                </a>
+            </div>
+            <h5>
+                <a href="/2022/09/03/%E6%97%A9%E5%AE%89%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%88%E5%9B%BD%E5%A4%96%E5%9F%8E%E5%B8%82%E3%80%81%E5%9B%BD%E5%86%85%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB%EF%BC%89/" class="trm-anima-link">
+                    早安微信公众号消息推送最新版（国外城市、国内每日新闻）
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/09/03</li>
+                <li>19:00</li>
+                
+                    <li>867</li>
+                
+                
+                    <li>4</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation" data-scroll data-scroll-offset="50">
+
+    
+        <div class="trm-footer-item">
+            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">陇ICP备20220616号</a>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2022- 2022</span>
+            <span class="footer-separator">·</span>
+            <span class="trm-accent-color">念舒_C.ying</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.2
+            </span>
+            <span class="footer-separator"> | </span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v1.0（试运行）
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item">
+            博客已萌萌哒运行 <span id="since" class="trm-accent-color"></span> 天
+        </div>
+     
+
+     
+</footer>
+
+<script>
+    function show_date_time () {
+        BirthDay = new Date("11/15/2022 00:00:00");
+        today = new Date();
+        timeold = (today.getTime() - BirthDay.getTime());
+        msPerDay = 24 * 60 * 60 * 1000
+        day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+</script>
+ 
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+          </div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+
+  </div>
+  <!-- app wrapper end -->
+
+  <div id="trm-back-top" class="trm-back-top">
+    <i class="fas fa-arrow-up"></i>
+</div>
+  
+<div class="trm-search-popup">
+    <div class="trm-search-header">
+        <span class="trm-search-popup-btn-close">
+            <i class="fas fa-times"></i>
+        </span>
+    </div>
+    <div class="form trm-search-form">
+        <input class="trm-search-input" type="text" placeholder="搜索...">
+    </div>
+    <div class="trm-search-result-container">
+
+    </div>
+</div>
+
+  <!-- Plugin -->
+
+
+
+    
+    
+
+    
+<script src="//cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+    
+<script src="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=1.0（试运行）"></script>
+    
+
+    
+        
+<script src="//cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=1.0（试运行）"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+
+    <!-- 评论插件 -->
+    
+        
+        
+    
+
+
+
+<!-- 评论插件 -->
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=1.0（试运行）"></script>
+
+</body>
+
+</html>

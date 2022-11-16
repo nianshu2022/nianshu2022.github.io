@@ -7,16 +7,36 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta property="og:type" content="website">
-<meta property="og:title" content="念舒_C.ying">
-<meta property="og:url" content="https://nianshu2022.github.io/tags/Linux/index.html">
+<meta name="description" content="【OpenStack云平台】SecureCRT 连接 CentOS虚拟机1.安装SecureCRT　　SecureCRT是一款支持SSH等协议的终端仿真软件，可以在windows下登录Linux服务器，这样大大方便了开发工作。安装SecureCRT可以通过网上的各种教程安装，本文也提供了一个软件的下载地址，里面也附带了简要的安装说明。 2.CentOS设置2.1 配置网卡controller节点：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【OpenStack云平台】SecureCRT 连接 CentOS虚拟机">
+<meta property="og:url" content="https://nianshu2022.github.io/2022/08/10/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91SecureCRT%20%E8%BF%9E%E6%8E%A5%20CentOS%E8%99%9A%E6%8B%9F%E6%9C%BA/index.html">
 <meta property="og:site_name" content="念舒_C.ying">
+<meta property="og:description" content="【OpenStack云平台】SecureCRT 连接 CentOS虚拟机1.安装SecureCRT　　SecureCRT是一款支持SSH等协议的终端仿真软件，可以在windows下登录Linux服务器，这样大大方便了开发工作。安装SecureCRT可以通过网上的各种教程安装，本文也提供了一个软件的下载地址，里面也附带了简要的安装说明。 2.CentOS设置2.1 配置网卡controller节点：">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/cf17c9ec1f30472d9111fccd6b494ac2.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/24ac11c2b7804408856fe3d8df14a25b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c62fe0edaa274b13a52ed71d4c101e9d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c439722dd34b4170a85178fc9f182cfd.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9d9ff86652af45dc993153b99a60db30.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/301bac0bdd8942039132743080ea80be.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/aadac14ca3734070a7abacc01ab554cd.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d37274f5dc524c24b94f76d415a3db52.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f270fb93469f4745ac9995ae795063f2.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/dbb9965aacb848cc9726249132501a6e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/33273e439eab42e5bced6a4b5765f60b.png">
+<meta property="article:published_time" content="2022-08-10T11:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-16T06:18:47.832Z">
 <meta property="article:author" content="念舒">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Centos">
+<meta property="article:tag" content="OpenStack">
+<meta property="article:tag" content="云原生">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/cf17c9ec1f30472d9111fccd6b494ac2.png">
 
 
-<title >念舒_C.ying</title>
+<title >【OpenStack云平台】SecureCRT 连接 CentOS虚拟机</title>
 
 <!-- Favicon -->
 
@@ -259,7 +279,8 @@
             <!-- top bar end -->
 
             <!-- body -->
-            <div class="trm-content-start">
+            
+<div class="trm-content-start">
     <!-- banner -->
     <div class="trm-banner" data-scroll data-scroll-direction="vertical">
     
@@ -283,10 +304,10 @@
                     <!-- banner title -->
                     <div class="trm-banner-text ">
                         <div class="trm-label trm-mb-20">
-                            The article archive
+                            NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            云间连下榻，<br>天上接行杯。
+                            【OpenStack云平台】SecureCRT 连接 CentOS虚拟机
                         </h1>
 
                         
@@ -296,7 +317,7 @@
                                 </li>
                                 <li>
                                     <span>
-                                        tags
+                                        2022
                                     </span
                                 ></li>
                             </ul>
@@ -328,7 +349,13 @@
 <div class="trm-main-card-frame trm-sidebar">
     <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
     
-        <!-- card header -->
+        <div class="trm-tabs" id="sidebar-tabs">
+           <div class="trm-tabs-nav trm-mb-40" id="trm-tabs-nav">
+                <div data-to="tabs-user" class="trm-tabs-nav-item"><i class="fas fa-user-alt"></i></div>
+                <div data-to="tabs-toc" class="trm-tabs-nav-item active"><i class="fas fa-th-list"></i></div>
+           </div>
+            <div name="tabs-user" class="trm-tabs-item">
+                <!-- card header -->
 <div class="trm-mc-header">
     <div class="trm-avatar-frame trm-mb-20"><img class="trm-avatar" src="/img/avatar.jpg" alt="Avatar"> </div>
     <h5 class="trm-name trm-mb-15">
@@ -419,6 +446,13 @@
 </div>
 <!-- action button end -->
 
+            </div>
+            <div name="tabs-toc" class="trm-tabs-item active">
+                <div class="post-toc">
+    <ol class="toc"><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#【OpenStack云平台】SecureCRT-连接-CentOS虚拟机"  data-scroll-to="#【OpenStack云平台】SecureCRT-连接-CentOS虚拟机"><span class="toc-number">1.</span> <span class="toc-text">【OpenStack云平台】SecureCRT 连接 CentOS虚拟机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#1-安装SecureCRT"  data-scroll-to="#1-安装SecureCRT"><span class="toc-number">1.1.</span> <span class="toc-text">1.安装SecureCRT</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#2-CentOS设置"  data-scroll-to="#2-CentOS设置"><span class="toc-number">1.2.</span> <span class="toc-text">2.CentOS设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#2-1-配置网卡"  data-scroll-to="#2-1-配置网卡"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 配置网卡</span></a></li><li class="toc-item toc-level-3"><a rel="nofollow" class="toc-link" href="#2-2设置VM网络编辑器"  data-scroll-to="#2-2设置VM网络编辑器"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2设置VM网络编辑器</span></a></li></ol></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#3-使用SecureCRT"  data-scroll-to="#3-使用SecureCRT"><span class="toc-number">1.3.</span> <span class="toc-text">3.使用SecureCRT</span></a></li></ol></li></ol>
+</div>
+            </div>
+        </div>
     
     </div>
 </div>
@@ -429,187 +463,142 @@
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
 
-                    <div class="row">
-    <div class="col-lg-12">
-        <div class="trm-card">
-            <div style="padding: 0 20px;">
-                
-                    <ul class="row trm-tag-list trm-list" itemprop="keywords"><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/Centos/" rel="tag">Centos</a><span class="tag-list-count">3</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">5</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/OpenEuler/" rel="tag">OpenEuler</a><span class="tag-list-count">1</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/OpenStack/" rel="tag">OpenStack</a><span class="tag-list-count">3</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/" rel="tag">云原生</a><span class="tag-list-count">3</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/" rel="tag">微信公众号</a><span class="tag-list-count">3</span></li></ul>
-                
-            </div>
+                    <div class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="far fa-calendar-alt trm-icon"></i><br>
+            08/10
         </div>
     </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="far fa-clock trm-icon"></i><br>
+            19:00
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="far fa-user trm-icon"></i><br>
+            念舒_C.ying
+        </div>
+    </div> 
 </div>
+<div class="trm-card ">
+    <article class="trm-publication">
+    <h1 id="【OpenStack云平台】SecureCRT-连接-CentOS虚拟机"><a href="#【OpenStack云平台】SecureCRT-连接-CentOS虚拟机" class="headerlink" title="【OpenStack云平台】SecureCRT 连接 CentOS虚拟机"></a>【OpenStack云平台】SecureCRT 连接 CentOS虚拟机</h1><h2 id="1-安装SecureCRT"><a href="#1-安装SecureCRT" class="headerlink" title="1.安装SecureCRT"></a>1.安装SecureCRT</h2><p>　　SecureCRT是一款支持SSH等协议的终端仿真软件，可以在windows下登录Linux服务器，这样大大方便了开发工作。安装SecureCRT可以通过网上的各种教程安装，本文也提供了一个软件的下载地址，里面也附带了简要的安装说明。</p>
+<h2 id="2-CentOS设置"><a href="#2-CentOS设置" class="headerlink" title="2.CentOS设置"></a>2.CentOS设置</h2><h3 id="2-1-配置网卡"><a href="#2-1-配置网卡" class="headerlink" title="2.1 配置网卡"></a>2.1 配置网卡</h3><p><strong>controller节点：</strong><br>配置网络：<br>修改BOOTPROTO=dhcp  （dhcp改为static）    ONBOOT=no   （no改为yes）<br>ens33添加：<br>IPADDR=192.168.100.10<br>PREFIX=24<br>GATEWAY=192.168.100.1<br>ens34添加：<br>IPADDR=192.168.200.10<br>PREFIX=24</p>
+<p><img src="https://img-blog.csdnimg.cn/cf17c9ec1f30472d9111fccd6b494ac2.png" alt="在这里插入图片描述" loading="lazy"><br><img src="https://img-blog.csdnimg.cn/24ac11c2b7804408856fe3d8df14a25b.png" alt="在这里插入图片描述" loading="lazy"></p>
+<p><strong>compute节点：</strong></p>
+<p>配置网络：<br>修改BOOTPROTO=dhcp  （dhcp改为static）    ONBOOT=no   （no改为yes）<br>ens33添加：<br>IPADDR=192.168.100.20<br>PREFIX=24<br>GATEWAY=192.168.100.1<br>ens34添加：<br>IPADDR=192.168.200.20<br>PREFIX=24<br><img src="https://img-blog.csdnimg.cn/c62fe0edaa274b13a52ed71d4c101e9d.png" alt="在这里插入图片描述" loading="lazy"><br><img src="https://img-blog.csdnimg.cn/c439722dd34b4170a85178fc9f182cfd.png" alt="在这里插入图片描述" loading="lazy"></p>
+<p>为了之后方便使用工具远程连接Linux系统，这边我们把防火墙关了，也可以禁止防火墙，永久关闭这样重启虚拟机也可以直接用工具远程连接了</p>
+<p><strong>关闭防火墙及修改配置文件 ：controller和compute都要做</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@controller ~]<span class="meta"># systemctl stop firewalld</span></span><br><span class="line">[root@controller ~]<span class="meta"># systemctl disable firewalld</span></span><br><span class="line">[root@controller ~]<span class="meta"># vi /etc/selinux/config      </span></span><br><span class="line">SELINUX=enforcing  （enforcing 改为disabled）</span><br><span class="line">[root@controller ~]<span class="meta"># setenforce 0</span></span><br><span class="line">[root@controller ~]<span class="meta"># getenforce</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/9d9ff86652af45dc993153b99a60db30.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h3 id="2-2设置VM网络编辑器"><a href="#2-2设置VM网络编辑器" class="headerlink" title="2.2设置VM网络编辑器"></a>2.2设置VM网络编辑器</h3><p><img src="https://img-blog.csdnimg.cn/301bac0bdd8942039132743080ea80be.png" alt="在这里插入图片描述" loading="lazy"><br><img src="https://img-blog.csdnimg.cn/aadac14ca3734070a7abacc01ab554cd.png" alt="在这里插入图片描述" loading="lazy"></p>
+<p><strong>注意：VMnet8必须跟controller节点和compute节点在同一个网段才能连接上SecureCRT。</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/d37274f5dc524c24b94f76d415a3db52.png" alt="在这里插入图片描述" loading="lazy"></p>
+<h2 id="3-使用SecureCRT"><a href="#3-使用SecureCRT" class="headerlink" title="3.使用SecureCRT"></a>3.使用SecureCRT</h2><p>使用SecureCRT连上controller节点。（注：连接SecureCRT是为了方便）<br><img src="https://img-blog.csdnimg.cn/f270fb93469f4745ac9995ae795063f2.png" alt="在这里插入图片描述" loading="lazy"><br> 输入密码后，点击“确定”即可连接上SecureCRT。<br><img src="https://img-blog.csdnimg.cn/dbb9965aacb848cc9726249132501a6e.png" alt="在这里插入图片描述" loading="lazy"></p>
+<p>出现以下图示表示连接成功。</p>
+<p><img src="https://img-blog.csdnimg.cn/33273e439eab42e5bced6a4b5765f60b.png" alt="在这里插入图片描述" loading="lazy"></p>
+<blockquote>
+<p>期待下次的分享，别忘了三连支持博主呀~<br>我是 <strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_52716296?type=blog">念舒_C.ying</a></strong> ，期待你的关注~💪💪💪</p>
+</blockquote>
 
-<!-- history -->
+</article>
+    
+    
 
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        念舒
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="https://nianshu2022.github.io/2022/08/10/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91SecureCRT%20%E8%BF%9E%E6%8E%A5%20CentOS%E8%99%9A%E6%8B%9F%E6%9C%BA/" title="【OpenStack云平台】SecureCRT 连接 CentOS虚拟机">https://nianshu2022.github.io/2022/08/10/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91SecureCRT%20%E8%BF%9E%E6%8E%A5%20CentOS%E8%99%9A%E6%8B%9F%E6%9C%BA/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> 许可协议。
+    </li>
+</ul>
+
+</div>
 <div class="row">
     <div class="col-lg-12">
         <!-- title -->
         <h5 class="trm-title-with-divider">
-            
-                Linux
-            
-            <span data-number="01"></span>
+            其他文章
+            <span data-number="02"></span>
         </h5>
     </div>
-    <div class="col-lg-12">
-        <!-- timeline -->
-        <div class="trm-timeline">
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2022/11/09/%E3%80%90openEuler%E3%80%91%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" class="trm-anima-link">
-                                        【OpenEuler】网络配置
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">11/09</li>
-                                        <li class="trm-accent-color">19:00</li>
-                                        
-                                        <li>243</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <a href="/2022/08/20/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91%E6%90%AD%E5%BB%BAopenstack%E4%BA%91%E5%B9%B3%E5%8F%B0/" class="trm-cover-frame trm-anima-link">
+            <img src="https://img-blog.csdnimg.cn/62d1b6e553964d39b2b5b37fe3c8ad06.jpeg" alt="cover">
+        </a>
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                    深度学习
+                </a>
             </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2022/11/06/Ubuntu%2020.04%20%E5%BC%80%E5%90%AFroot%E6%9D%83%E9%99%90%E7%99%BB%E9%99%86%E3%80%81%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/" class="trm-anima-link">
-                                        Ubuntu 20.04 开启root权限登陆、网卡配置
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">11/06</li>
-                                        <li class="trm-accent-color">19:00</li>
-                                        
-                                        <li>208</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2022/08/20/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91%E6%90%AD%E5%BB%BAopenstack%E4%BA%91%E5%B9%B3%E5%8F%B0/" class="trm-anima-link">
-                                        【OpenStack云平台】搭建openstack云平台
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">08/20</li>
-                                        <li class="trm-accent-color">19:00</li>
-                                        
-                                        <li>1.6k</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2022/08/10/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91SecureCRT%20%E8%BF%9E%E6%8E%A5%20CentOS%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="trm-anima-link">
-                                        【OpenStack云平台】SecureCRT 连接 CentOS虚拟机
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">08/10</li>
-                                        <li class="trm-accent-color">19:00</li>
-                                        
-                                        <li>396</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2022/08/02/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91%E5%AE%89%E8%A3%85Centos%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="trm-anima-link">
-                                        【OpenStack云平台】安装Centos操作系统
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">08/02</li>
-                                        <li class="trm-accent-color">19:00</li>
-                                        
-                                        <li>220</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
+            <h5>
+                <a href="/2022/08/20/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91%E6%90%AD%E5%BB%BAopenstack%E4%BA%91%E5%B9%B3%E5%8F%B0/" class="trm-anima-link">
+                    【OpenStack云平台】搭建openstack云平台
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/08/20</li>
+                <li>19:00</li>
+                
+                    <li>1.6k</li>
+                
+                
+                    <li>7</li>
+                
+            </ul>
         </div>
-        <!-- timeline end -->
     </div>
 </div>
-
-<!-- history end -->
-
-
-    <div class="trm-pagination">
-        <span class="page-number current">1</span>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <a href="/2022/08/02/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91%E5%AE%89%E8%A3%85Centos%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="trm-cover-frame trm-anima-link">
+            <img src="https://img-blog.csdnimg.cn/bb233170474c48ac90ebb59b0e9f8b77.jpeg" alt="cover">
+        </a>
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                    深度学习
+                </a>
+            </div>
+            <h5>
+                <a href="/2022/08/02/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91%E5%AE%89%E8%A3%85Centos%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="trm-anima-link">
+                    【OpenStack云平台】安装Centos操作系统
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/08/02</li>
+                <li>19:00</li>
+                
+                    <li>220</li>
+                
+                
+                    <li>1</li>
+                
+            </ul>
+        </div>
     </div>
+</div>
+    
+</div>
 
-
+    
 
 
 
@@ -733,6 +722,9 @@
 
 
     <!-- 评论插件 -->
+    
+        
+        
     
 
 

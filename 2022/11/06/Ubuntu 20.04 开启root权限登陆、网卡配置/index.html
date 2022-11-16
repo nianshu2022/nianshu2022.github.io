@@ -7,16 +7,22 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta property="og:type" content="website">
-<meta property="og:title" content="念舒_C.ying">
-<meta property="og:url" content="https://nianshu2022.github.io/tags/Linux/index.html">
+<meta name="description" content="个人名片：对人间的热爱与歌颂，可抵岁月冗长:sun_with_face:Github👨🏻‍💻：念舒_C.yingCSDN主页✏️：念舒_C.ying个人博客:earth_asia: ：念舒_C.ying   Ubuntu 20.04 开启root权限登陆、网卡配置1 开启root权限登陆12345678910111213141516#修改root密码sudo passwd root#安装s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 20.04 开启root权限登陆、网卡配置">
+<meta property="og:url" content="https://nianshu2022.github.io/2022/11/06/Ubuntu%2020.04%20%E5%BC%80%E5%90%AFroot%E6%9D%83%E9%99%90%E7%99%BB%E9%99%86%E3%80%81%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="念舒_C.ying">
+<meta property="og:description" content="个人名片：对人间的热爱与歌颂，可抵岁月冗长:sun_with_face:Github👨🏻‍💻：念舒_C.yingCSDN主页✏️：念舒_C.ying个人博客:earth_asia: ：念舒_C.ying   Ubuntu 20.04 开启root权限登陆、网卡配置1 开启root权限登陆12345678910111213141516#修改root密码sudo passwd root#安装s">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-06T11:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-16T05:56:21.629Z">
 <meta property="article:author" content="念舒">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Ubuntu">
 <meta name="twitter:card" content="summary">
 
 
-<title >念舒_C.ying</title>
+<title >Ubuntu 20.04 开启root权限登陆、网卡配置</title>
 
 <!-- Favicon -->
 
@@ -259,7 +265,8 @@
             <!-- top bar end -->
 
             <!-- body -->
-            <div class="trm-content-start">
+            
+<div class="trm-content-start">
     <!-- banner -->
     <div class="trm-banner" data-scroll data-scroll-direction="vertical">
     
@@ -283,10 +290,10 @@
                     <!-- banner title -->
                     <div class="trm-banner-text ">
                         <div class="trm-label trm-mb-20">
-                            The article archive
+                            NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            云间连下榻，<br>天上接行杯。
+                            Ubuntu 20.04 开启root权限登陆、网卡配置
                         </h1>
 
                         
@@ -296,7 +303,7 @@
                                 </li>
                                 <li>
                                     <span>
-                                        tags
+                                        2022
                                     </span
                                 ></li>
                             </ul>
@@ -328,7 +335,13 @@
 <div class="trm-main-card-frame trm-sidebar">
     <div class="trm-main-card" data-scroll data-scroll-repeat data-scroll-sticky data-scroll-target=".locomotive-scroll__sticky-target" data-scroll-offset="60"> 
     
-        <!-- card header -->
+        <div class="trm-tabs" id="sidebar-tabs">
+           <div class="trm-tabs-nav trm-mb-40" id="trm-tabs-nav">
+                <div data-to="tabs-user" class="trm-tabs-nav-item"><i class="fas fa-user-alt"></i></div>
+                <div data-to="tabs-toc" class="trm-tabs-nav-item active"><i class="fas fa-th-list"></i></div>
+           </div>
+            <div name="tabs-user" class="trm-tabs-item">
+                <!-- card header -->
 <div class="trm-mc-header">
     <div class="trm-avatar-frame trm-mb-20"><img class="trm-avatar" src="/img/avatar.jpg" alt="Avatar"> </div>
     <h5 class="trm-name trm-mb-15">
@@ -419,6 +432,13 @@
 </div>
 <!-- action button end -->
 
+            </div>
+            <div name="tabs-toc" class="trm-tabs-item active">
+                <div class="post-toc">
+    <ol class="toc"><li class="toc-item toc-level-1"><a rel="nofollow" class="toc-link" href="#Ubuntu-20-04-开启root权限登陆、网卡配置"  data-scroll-to="#Ubuntu-20-04-开启root权限登陆、网卡配置"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu 20.04 开启root权限登陆、网卡配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#1-开启root权限登陆"  data-scroll-to="#1-开启root权限登陆"><span class="toc-number">1.1.</span> <span class="toc-text">1 开启root权限登陆</span></a></li><li class="toc-item toc-level-2"><a rel="nofollow" class="toc-link" href="#2-网卡配置"  data-scroll-to="#2-网卡配置"><span class="toc-number">1.2.</span> <span class="toc-text">2 网卡配置</span></a></li></ol></li></ol>
+</div>
+            </div>
+        </div>
     
     </div>
 </div>
@@ -429,187 +449,135 @@
                 <div class="trm-content" id="trm-content">
                     <div data-scroll data-scroll-repeat data-scroll-offset="500" id="about-triger"></div>
 
-                    <div class="row">
-    <div class="col-lg-12">
-        <div class="trm-card">
-            <div style="padding: 0 20px;">
-                
-                    <ul class="row trm-tag-list trm-list" itemprop="keywords"><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/Centos/" rel="tag">Centos</a><span class="tag-list-count">3</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">5</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/OpenEuler/" rel="tag">OpenEuler</a><span class="tag-list-count">1</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/OpenStack/" rel="tag">OpenStack</a><span class="tag-list-count">3</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/" rel="tag">云原生</a><span class="tag-list-count">3</span></li><li class="col-lg-4 trm-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/" rel="tag">微信公众号</a><span class="tag-list-count">3</span></li></ul>
-                
-            </div>
+                    <div class="row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="far fa-calendar-alt trm-icon"></i><br>
+            11/06
         </div>
     </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="far fa-clock trm-icon"></i><br>
+            19:00
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="far fa-user trm-icon"></i><br>
+            念舒_C.ying
+        </div>
+    </div> 
 </div>
+<div class="trm-card ">
+    <article class="trm-publication">
+    <blockquote>
+<p><font size=4 face="楷体"><strong>个人名片：</strong><br><font size=3 face="楷体">对人间的热爱与歌颂，可抵岁月冗长:sun_with_face:<br><font color=#FF0000 size=3 face="楷体">Github👨🏻‍💻：<a href="https://nianshu2022.github.io/">念舒_C.ying</a><br>CSDN主页✏️：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_52716296?spm=1011.2415.3001.5343">念舒_C.ying</a><font><br>个人博客:earth_asia: ：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/nianshu/">念舒_C.ying</a><font> </p>
+</blockquote>
+<h1 id="Ubuntu-20-04-开启root权限登陆、网卡配置"><a href="#Ubuntu-20-04-开启root权限登陆、网卡配置" class="headerlink" title="Ubuntu 20.04 开启root权限登陆、网卡配置"></a>Ubuntu 20.04 开启root权限登陆、网卡配置</h1><h2 id="1-开启root权限登陆"><a href="#1-开启root权限登陆" class="headerlink" title="1 开启root权限登陆"></a>1 开启root权限登陆</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#修改root密码</span><br><span class="line">sudo passwd root</span><br><span class="line"></span><br><span class="line">#安装ssh</span><br><span class="line">apt-get install ssh</span><br><span class="line">apt-get install openssh-server</span><br><span class="line">apt-get install openssh-client</span><br><span class="line"></span><br><span class="line">#开启root登录</span><br><span class="line">sed -i &#x27;s/^#\?PermitRootLogin.*/PermitRootLogin yes/g&#x27; /etc/ssh/sshd_config</span><br><span class="line"></span><br><span class="line">#开启密码验证</span><br><span class="line">sed -i &#x27;s/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g&#x27; /etc/ssh/sshd_config</span><br><span class="line"></span><br><span class="line">#重启ssh服务</span><br><span class="line">service sshd restart</span><br></pre></td></tr></table></figure>
 
-<!-- history -->
+<h2 id="2-网卡配置"><a href="#2-网卡配置" class="headerlink" title="2 网卡配置"></a>2 网卡配置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/netplan/01-network-manager-all.yaml</span><br><span class="line"></span><br><span class="line">    ethernets:</span><br><span class="line">        ens33: #网卡名称</span><br><span class="line">            dhcp4: no</span><br><span class="line">            addresses: [192.168.2.123/24] #静态IP及掩码</span><br><span class="line">            optional: true</span><br><span class="line">            gateway4: 192.168.2.1 #网关</span><br><span class="line">            nameservers:</span><br><span class="line">                    addresses: [202.100.64.68] #DNS</span><br><span class="line"></span><br><span class="line"> #重启网络</span><br><span class="line"> netplan apply</span><br></pre></td></tr></table></figure>
 
+
+<blockquote>
+<p>期待下次的分享，别忘了三连支持博主呀~<br>我是 <strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_52716296?type=blog">念舒_C.ying</a></strong> ，期待你的关注~💪💪💪</p>
+</blockquote>
+
+</article>
+    
+    
+
+<ul class="trm-post-copyright">
+    <li class="trm-post-copyright-author">
+        <strong>本文作者：</strong>
+        念舒
+    </li>
+    <li class="trm-post-copyright-link">
+        <strong>本文链接：</strong>
+        <a href="https://nianshu2022.github.io/2022/11/06/Ubuntu%2020.04%20%E5%BC%80%E5%90%AFroot%E6%9D%83%E9%99%90%E7%99%BB%E9%99%86%E3%80%81%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/" title="Ubuntu 20.04 开启root权限登陆、网卡配置">https://nianshu2022.github.io/2022/11/06/Ubuntu%2020.04%20%E5%BC%80%E5%90%AFroot%E6%9D%83%E9%99%90%E7%99%BB%E9%99%86%E3%80%81%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/</a>
+    </li>
+    <li class="trm-post-copyright-license">
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 ">CC BY-NC-SA 4.0</a> 许可协议。
+    </li>
+</ul>
+
+</div>
 <div class="row">
     <div class="col-lg-12">
         <!-- title -->
         <h5 class="trm-title-with-divider">
-            
-                Linux
-            
-            <span data-number="01"></span>
+            其他文章
+            <span data-number="02"></span>
         </h5>
     </div>
-    <div class="col-lg-12">
-        <!-- timeline -->
-        <div class="trm-timeline">
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2022/11/09/%E3%80%90openEuler%E3%80%91%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" class="trm-anima-link">
-                                        【OpenEuler】网络配置
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">11/09</li>
-                                        <li class="trm-accent-color">19:00</li>
-                                        
-                                        <li>243</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <a href="/2022/11/09/%E3%80%90openEuler%E3%80%91%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" class="trm-cover-frame trm-anima-link">
+            <img src="https://img-blog.csdnimg.cn/8a2fc0a877994ca494b47e9e45829553.jpeg" alt="cover">
+        </a>
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                    深度学习
+                </a>
             </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2022/11/06/Ubuntu%2020.04%20%E5%BC%80%E5%90%AFroot%E6%9D%83%E9%99%90%E7%99%BB%E9%99%86%E3%80%81%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/" class="trm-anima-link">
-                                        Ubuntu 20.04 开启root权限登陆、网卡配置
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">11/06</li>
-                                        <li class="trm-accent-color">19:00</li>
-                                        
-                                        <li>208</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2022/08/20/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91%E6%90%AD%E5%BB%BAopenstack%E4%BA%91%E5%B9%B3%E5%8F%B0/" class="trm-anima-link">
-                                        【OpenStack云平台】搭建openstack云平台
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">08/20</li>
-                                        <li class="trm-accent-color">19:00</li>
-                                        
-                                        <li>1.6k</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2022/08/10/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91SecureCRT%20%E8%BF%9E%E6%8E%A5%20CentOS%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="trm-anima-link">
-                                        【OpenStack云平台】SecureCRT 连接 CentOS虚拟机
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">08/10</li>
-                                        <li class="trm-accent-color">19:00</li>
-                                        
-                                        <li>396</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
-            <div class="trm-timeline-item trm-scroll-animation" data-scroll data-scroll-offset="40">
-                <div class="trm-timeline-mark-light"></div>
-                <div class="trm-timeline-mark"></div>
-                <div class="trm-a trm-timeline-content more">
-                    
-                        <div class="trm-card-header">
-                            <div class="trm-left-side">
-                                <h6>
-                                    <a href="/2022/08/02/%E3%80%90OpenStack%E4%BA%91%E5%B9%B3%E5%8F%B0%E3%80%91%E5%AE%89%E8%A3%85Centos%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="trm-anima-link">
-                                        【OpenStack云平台】安装Centos操作系统
-                                    </a>
-                                </h6>
-                                <div class="trm-text-sm trm-accent-color trm-mt-15">
-                                    <ul class="trm-card-data trm-label ">
-                                        <li class="trm-accent-color">08/02</li>
-                                        <li class="trm-accent-color">19:00</li>
-                                        
-                                        <li>220</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    
-                </div>
-            </div>
-            
+            <h5>
+                <a href="/2022/11/09/%E3%80%90openEuler%E3%80%91%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" class="trm-anima-link">
+                    【OpenEuler】网络配置
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/11/09</li>
+                <li>19:00</li>
+                
+                    <li>243</li>
+                
+                
+                    <li>1</li>
+                
+            </ul>
         </div>
-        <!-- timeline end -->
     </div>
 </div>
-
-<!-- history end -->
-
-
-    <div class="trm-pagination">
-        <span class="page-number current">1</span>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation" data-scroll data-scroll-offset="40">
+        <a href="/2022/09/18/%E7%99%BE%E5%BA%A6%E4%BA%91%E7%89%88%E5%BE%AE%E4%BF%A1%E6%B5%8B%E8%AF%95%E5%8F%B7%E4%B8%93%E5%B1%9E%E6%B5%AA%E6%BC%AB%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81%EF%BC%88%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%89/" class="trm-cover-frame trm-anima-link">
+            <img src="https://img-blog.csdnimg.cn/5ce5141f2ebf4a85b4f1caba45d8d069.jpeg" alt="cover">
+        </a>
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%8E%A2%E7%B4%A2%E7%BB%8F%E9%AA%8C/">
+                    探索经验
+                </a>
+            </div>
+            <h5>
+                <a href="/2022/09/18/%E7%99%BE%E5%BA%A6%E4%BA%91%E7%89%88%E5%BE%AE%E4%BF%A1%E6%B5%8B%E8%AF%95%E5%8F%B7%E4%B8%93%E5%B1%9E%E6%B5%AA%E6%BC%AB%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81%EF%BC%88%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%89/" class="trm-anima-link">
+                    百度云版微信测试号专属浪漫消息推送（最新版）
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>22/09/18</li>
+                <li>19:00</li>
+                
+                    <li>1.5k</li>
+                
+                
+                    <li>7</li>
+                
+            </ul>
+        </div>
     </div>
+</div>
+    
+</div>
 
-
+    
 
 
 
@@ -733,6 +701,9 @@
 
 
     <!-- 评论插件 -->
+    
+        
+        
     
 
 
