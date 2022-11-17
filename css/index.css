@@ -219,7 +219,7 @@ html.is-animating .trm-swup-animation {
   margin-bottom: 30px;
 }
 .trm-mb-40 {
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 .trm-mt-15 {
   margin-top: 15px;
@@ -228,7 +228,7 @@ html.is-animating .trm-swup-animation {
   margin-top: 20px;
 }
 .trm-mt-40 {
-  margin-top: 40px;
+  margin-top: 35px;
 }
 .trm-just-img {
   width: 100%;
@@ -1328,8 +1328,8 @@ blockquote:after {
   border-radius: var(--card-border-radius, 10px);
   box-shadow: var(--box-shadow2, 0 2px 4px -2px rgba(0, 0, 0, 0.15));
   background-color: var(--theme-bg-color, #fcfcfe);
-  padding: var(--card-padding, 40px);
-  margin-bottom: var(--card-bottom-card, 40px);
+  padding: var(--card-padding, 30px);
+  margin-bottom: var(--card-bottom-card, 35px);
 }
 .trm-skill-card .trm-skill-header {
   display: flex;
@@ -1452,7 +1452,7 @@ blockquote:after {
   justify-content: flex-start;
   padding: var(--card-padding, 40px);
   border-radius: var(--card-border-radius, 10px);
-  width: 100%;
+  width: 90%;
   height: calc(100vh - 100px);
   box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.15);
   background-color: var(--theme-bg-color, #fcfcfe);

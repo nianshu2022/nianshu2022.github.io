@@ -82,6 +82,25 @@
     document.documentElement.classList[type]('dark')
 </script>
 
+<style>
+    @import url(https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css);
+</style>
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+<meting-js 
+    server="netease" 
+    type="playlist" 
+    id="7752931646"
+    fixed="true" 
+    autoplay="true"
+    loop="all"
+    order="random"
+    preload="auto"
+    list-folded="ture"
+    list-max-height="500px" 
+>
+</meting-js>	
+
 <!-- CDN -->
 
 
@@ -231,9 +250,10 @@
 						
 					</ul>
 				</nav>
+
 			</div>
-			<!-- menu end -->
-			
+			<!-- menu end -->	
+
 			<!-- mode switcher place -->
 			
 			<div class="trm-mode-switcher-place">
@@ -246,6 +266,7 @@
 					</div>
 				  <!-- </div> -->
 			</div>
+
 			
 			<!-- mode switcher place end -->
 
@@ -256,8 +277,8 @@
 				</div>
 				 
 			 
-
 		</div>
+	
 		<div class="trm-menu-btn">
 			<span></span>
 		</div>
@@ -588,69 +609,8 @@
 
                     <div class="trm-divider footer-divider"></div>
 
-                    <!-- footer -->
-                    <footer class="trm-scroll-animation" data-scroll data-scroll-offset="50">
-</script>
-    
-        <div class="trm-footer-item">
-            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">陇ICP备20220616号</a>
-        </div>
-    
-
-    
-        <div class="trm-footer-item">
-            <span>© 2022- 2022</span>
-            <span class="footer-separator">·</span>
-            <span class="trm-accent-color">念舒_C.ying</span>
-        </div>
-    
-
-    
-        <div class="trm-footer-item">
-            <span>
-                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.2
-            </span>
-            <span class="footer-separator"> | </span>
-            <span> 
-                主题 - 
-                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
-                v1.0（试运行）
-            </span>
-        </div>
-      
-
-    
-        <div class="trm-footer-item">
-            博客已萌萌哒运行 <span id="since" class="trm-accent-color"></span> 天
-        </div>
-     
-
-      
-
-    <script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script>
-
-    本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
-
-    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
-
-    本站总访客数 <span id="busuanzi_value_site_uv"></span> 人
-</footer>
 
 
-
-<script>
-    function show_date_time () {
-        BirthDay = new Date("11/15/2022 00:00:00");
-        today = new Date();
-        timeold = (today.getTime() - BirthDay.getTime());
-        msPerDay = 24 * 60 * 60 * 1000
-        day = Math.floor(timeold / msPerDay)
-        since.innerHTML = day
-    }
-    show_date_time()
-</script>
- 
-                    <!-- footer end -->
 
                 </div>
             </div>
@@ -746,6 +706,6 @@
 
 <script id="async-script" src="/js/main.js?v=1.0（试运行）"></script>
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
