@@ -55,7 +55,7 @@ yarn build
 
 - 仓库名称：username.github.io
 
-![2023-8-711:14:12-Untitled 1.png](https://gitee.com/nianshu2022/image/raw/master/2023-8-711:14:12-Untitled 1.png)
+![](https://gitee.com/nianshu2022/image/raw/master/2023-8-711:16:41-Untitled 1.png)
 
 ## 2.2 Git推送代码
 
