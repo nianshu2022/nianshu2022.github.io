@@ -69,7 +69,7 @@ git config --global user.email test@runoob.com
 - 远端服务器上的仓库
 
 ```bash
-**git clone username@host:/path/to/repository**
+git clone username@host:/path/to/repository
 ```
 
 - 查看配置信息
